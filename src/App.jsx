@@ -77,35 +77,40 @@ function App() {
         </button>
 
         <div
-          className={`${
-            isDark ? "bg-gray-800" : "bg-gray-100"
-          } py-2 md:py-16 transition-colors`}
+          className={`min-h-screen flex flex-col ${
+            isDark ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+          } transition-colors`}
         >
-          <div className="container mx-auto max-w-5xl px-4">
-            {/* <Logo /> */}
-            <Navbar isDark={isDark} onToggleDark={() => setIsDark(!isDark)} />
-            <div className="hidden md:block">
-              <SocialLink isDark={isDark} />
+          <div
+            className={`${
+              isDark ? "bg-gray-800" : "bg-gray-100"
+            } py-2 md:py-16 transition-colors`}
+          >
+            <div className="container mx-auto max-w-5xl px-4">
+              {/* <Logo /> */}
+              <Navbar isDark={isDark} onToggleDark={() => setIsDark(!isDark)} />
+              <div className="hidden md:block">
+                <SocialLink isDark={isDark} />
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          className={`flex-1 ${
-            isDark ? "bg-gray-900 text-white" : "bg-white text-gray-900"
-          } py-10 md:py-12 transition-colors`}
-        >
-          <div className="container mx-auto max-w-[1100px] px-4 space-y-6">
-            <Routes>
-              <Route path="/" element={<About isDark={isDark} />} />
-              <Route
-                path="/portfolio"
-                element={<Portfolio isDark={isDark} />}
-              />
-              <Route path="/contact" element={<Contact isDark={isDark} />} />
-              <Route path="/blog" element={<Blog isDark={isDark} />} />
-              <Route path="/blog/:id" element={<BlogPost isDark={isDark} />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
+          <div className="flex-1 flex flex-col py-10 md:py-12">
+            <div className="container mx-auto max-w-[1100px] px-4 space-y-6 flex-1 flex flex-col">
+              <Routes>
+                <Route path="/" element={<About isDark={isDark} />} />
+                <Route
+                  path="/portfolio"
+                  element={<Portfolio isDark={isDark} />}
+                />
+                <Route path="/contact" element={<Contact isDark={isDark} />} />
+                <Route path="/blog" element={<Blog isDark={isDark} />} />
+                <Route
+                  path="/blog/:id"
+                  element={<BlogPost isDark={isDark} />}
+                />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </div>
           </div>
         </div>
         <Footer isDark={isDark} />
