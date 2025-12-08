@@ -75,7 +75,7 @@ function App() {
           <div className="container mx-auto max-w-[1000px] space-y-6">
             <Routes>
               <Route path="/" element={<About isDark={isDark} />} />
-              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/portfolio" element={<Portfolio isDark={isDark} />} />
               <Route path="/contact" element={<Contact isDark={isDark} />} />
               <Route path="/blog" element={<Blog isDark={isDark} />} />
               <Route path="/blog/:id" element={<BlogPost isDark={isDark} />} />
