@@ -7,7 +7,7 @@ export default function Footer({ isDark }) {
         isDark ? "bg-gray-800 text-white" : "bg-gray-100 text-gray-900"
       } transition-colors`}
     >
-      <div className="container mx-auto max-w-[1100px] py-12">
+      <div className="container mx-auto max-w-[1100px] px-4 py-12">
         {/* Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About Section */}

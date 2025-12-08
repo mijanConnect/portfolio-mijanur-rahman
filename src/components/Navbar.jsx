@@ -37,18 +37,39 @@ export default function Navbar({ isDark, onToggleDark }) {
           {/* Theme Toggle - Left side */}
           <button
             onClick={onToggleDark}
-            className={`inline-flex items-center justify-center rounded-md p-2 transition-colors ${
-              isDark
-                ? "text-white hover:bg-gray-800"
-                : "text-gray-900 hover:bg-gray-200"
-            }`}
+            className="inline-flex items-center justify-center focus:outline-none group"
             aria-label="Toggle dark mode"
           >
-            {isDark ? (
-              <i className="fa-solid fa-moon text-xl" />
-            ) : (
-              <i className="fa-solid fa-sun text-xl" />
-            )}
+            <div
+              className={`relative inline-flex h-8 w-16 items-center rounded-full transition-all duration-300 ${
+                isDark
+                  ? "bg-linear-to-r from-gray-700 to-gray-800"
+                  : "bg-linear-to-r from-blue-300 to-blue-400"
+              } shadow-lg`}
+            >
+              {/* Sliding Circle */}
+              <span
+                className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-all duration-300 ${
+                  isDark ? "translate-x-1" : "translate-x-9"
+                } group-hover:shadow-xl`}
+              />
+              {/* Moon Icon */}
+              <span
+                className={`absolute left-2 transition-all duration-300 ${
+                  isDark ? "opacity-100 scale-100" : "opacity-0 scale-0"
+                }`}
+              >
+                <i className="fa-solid fa-moon text-xs text-blue-900"></i>
+              </span>
+              {/* Sun Icon */}
+              <span
+                className={`absolute right-2 transition-all duration-300 ${
+                  isDark ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                }`}
+              >
+                <i className="fa-solid fa-sun text-xs text-yellow-400"></i>
+              </span>
+            </div>
           </button>
 
           {/* Social Links - Center (always show) */}
