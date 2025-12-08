@@ -76,7 +76,7 @@ function App() {
             <Routes>
               <Route path="/" element={<About isDark={isDark} />} />
               <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/contact" element={<Contact isDark={isDark} />} />
               <Route path="/blog" element={<Blog isDark={isDark} />} />
               <Route path="/blog/:id" element={<BlogPost isDark={isDark} />} />
               <Route path="*" element={<Navigate to="/" replace />} />
