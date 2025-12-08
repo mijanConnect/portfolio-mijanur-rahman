@@ -5,6 +5,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Portfolio from "./components/Portfolio";
+import ProjectDetails from "./components/ProjectDetails";
 import SocialLink from "./components/SocialLink";
 import Blog from "./components/Blog";
 import BlogPost from "./components/BlogPost";
@@ -101,6 +102,10 @@ function App() {
                 <Route
                   path="/portfolio"
                   element={<Portfolio isDark={isDark} />}
+                />
+                <Route
+                  path="/portfolio/:id"
+                  element={<ProjectDetails isDark={isDark} />}
                 />
                 <Route path="/contact" element={<Contact isDark={isDark} />} />
                 <Route path="/blog" element={<Blog isDark={isDark} />} />

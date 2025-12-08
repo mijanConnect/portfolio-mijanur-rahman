@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { portfolioData } from "../data/portfolioData";
 
 export default function Portfolio({ isDark }) {
   const [activeSection, setActiveSection] = useState("overview");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observerOptions = {
@@ -254,7 +256,11 @@ export default function Portfolio({ isDark }) {
                   ))}
                 </div>
                 <a
-                  href={project.link}
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate(`/portfolio/${project.id}`);
+                  }}
                   className={`inline-flex items-center gap-2 font-semibold transition-colors ${
                     isDark
                       ? "text-yellow-400 hover:text-yellow-300"
