@@ -255,21 +255,55 @@ export default function Portfolio({ isDark }) {
                     </span>
                   ))}
                 </div>
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate(`/portfolio/${project.id}`);
-                  }}
-                  className={`inline-flex items-center gap-2 font-semibold transition-colors ${
-                    isDark
-                      ? "text-yellow-400 hover:text-yellow-300"
-                      : "text-blue-600 hover:text-blue-700"
-                  }`}
-                >
-                  View Project
-                  <i className="fa-solid fa-arrow-right"></i>
-                </a>
+                <div className="flex items-center justify-between">
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate(`/portfolio/${project.id}`);
+                    }}
+                    className={`inline-flex items-center gap-2 font-semibold transition-colors ${
+                      isDark
+                        ? "text-yellow-400 hover:text-yellow-300"
+                        : "text-blue-600 hover:text-blue-700"
+                    }`}
+                  >
+                    View Project
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </a>
+                  <div className="flex items-center gap-3">
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`text-xl transition-colors ${
+                          isDark
+                            ? "text-gray-400 hover:text-yellow-400"
+                            : "text-gray-600 hover:text-blue-600"
+                        }`}
+                        title="View on GitHub"
+                      >
+                        <i className="fa-brands fa-github"></i>
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`text-xl transition-colors ${
+                          isDark
+                            ? "text-gray-400 hover:text-yellow-400"
+                            : "text-gray-600 hover:text-blue-600"
+                        }`}
+                        title="View Live Demo"
+                      >
+                        <i className="fa-solid fa-external-link-alt"></i>
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
