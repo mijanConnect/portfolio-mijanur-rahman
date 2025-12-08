@@ -60,7 +60,7 @@ function App() {
 
         <div
           className={`${
-            isDark ? "bg-[#141414]" : "bg-gray-100"
+            isDark ? "bg-gray-800" : "bg-gray-100"
           } py-16 transition-colors`}
         >
           {/* <Logo /> */}
@@ -69,7 +69,7 @@ function App() {
         </div>
         <div
           className={`flex-1 ${
-            isDark ? "bg-black text-white" : "bg-white text-gray-900"
+            isDark ? "bg-gray-900 text-white" : "bg-white text-gray-900"
           } py-12 transition-colors`}
         >
           <div className="container mx-auto max-w-[1000px] space-y-6">

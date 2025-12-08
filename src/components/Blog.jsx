@@ -38,7 +38,7 @@ export default function Blog({ isDark }) {
           {visiblePosts.map((post) => (
             <article
               key={post.id}
-              className={`rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ${
+              className={`rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 ${
                 isDark
                   ? "bg-gray-800 hover:bg-gray-750"
                   : "bg-gray-100 hover:bg-gray-200"
@@ -57,7 +57,13 @@ export default function Blog({ isDark }) {
               <div className="p-6">
                 {/* Category Badge */}
                 <div className="flex items-center gap-4 mb-3">
-                  <span className="text-xs md:text-sm px-3 py-1 bg-yellow-400 text-gray-900 rounded-full font-semibold">
+                  <span
+                    className={`text-xs md:text-sm px-3 py-1 rounded-full font-semibold ${
+                      isDark
+                        ? "bg-yellow-400 text-gray-900"
+                        : "bg-blue-600 text-white"
+                    }`}
+                  >
                     {post.category}
                   </span>
                   <span
@@ -102,7 +108,11 @@ export default function Blog({ isDark }) {
                   </span>
                   <Link
                     to={`/blog/${post.id}`}
-                    className="text-yellow-400 hover:text-yellow-300 font-semibold transition-colors flex items-center gap-2"
+                    className={`font-semibold transition-colors flex items-center gap-2 ${
+                      isDark
+                        ? "text-yellow-400 hover:text-yellow-300"
+                        : "text-blue-600 hover:text-blue-700"
+                    }`}
                   >
                     Read More
                     <i className="fa-solid fa-arrow-right"></i>

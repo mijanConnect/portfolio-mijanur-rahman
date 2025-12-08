@@ -56,7 +56,11 @@ export default function BlogPost({ isDark }) {
       {/* Post Header */}
       <div className="mb-8">
         <div className="flex items-center gap-4 mb-4">
-          <span className="text-xs md:text-sm px-3 py-1 bg-yellow-400 text-gray-900 rounded-full font-semibold">
+          <span
+            className={`text-xs md:text-sm px-3 py-1 rounded-full font-semibold ${
+              isDark ? "bg-yellow-400 text-gray-900" : "bg-blue-600 text-white"
+            }`}
+          >
             {post.category}
           </span>
           <span
