@@ -3,6 +3,14 @@
 @import "tailwindcss";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
+/* Global Primary Colors */
+:root {
+  --primary-color: #363f7d;
+  --primary-dark: #1a1d2b;
+  --primary-light: #5a68b8;
+  --accent-color: #fbbf24;
+}
+
 body {
   font-family: "PT Serif", serif;
 }

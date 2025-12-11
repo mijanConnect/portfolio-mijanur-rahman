@@ -79,12 +79,15 @@ function App() {
 
         <div
           className={`min-h-screen flex flex-col ${
+            // isDark ? "bg-[#121212] text-white" : "bg-white text-gray-900"
             isDark ? "bg-gray-900 text-white" : "bg-white text-gray-900"
           } transition-colors`}
         >
           <div
             className={`${
+              // isDark ? "bg-[#4608ad]" : "bg-gray-100"
               isDark ? "bg-gray-800" : "bg-gray-100"
+              // isDark ? "bg-[#121212]" : "bg-gray-100"
             } py-2 md:py-16 transition-colors`}
           >
             <div className="container mx-auto max-w-5xl px-4">
