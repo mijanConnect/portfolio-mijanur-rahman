@@ -46,11 +46,12 @@ function App() {
           className="hidden md:block fixed top-6 right-6 z-50 focus:outline-none group"
         >
           <div
-            className={`relative inline-flex h-10 w-20 items-center rounded-full transition-all duration-300 ${
-              isDark
-                ? "bg-linear-to-r from-gray-700 to-gray-800"
-                : "bg-linear-to-r from-blue-300 to-blue-400"
-            } shadow-lg`}
+            className={`relative inline-flex h-10 w-20 items-center rounded-full transition-all duration-300 bg-linear-to-r shadow-lg`}
+            style={{
+              backgroundImage: isDark
+                ? "linear-gradient(to right, rgb(55, 65, 81), rgb(31, 41, 55))"
+                : `linear-gradient(to right, var(--primary-color), var(--primary-color))`,
+            }}
           >
             {/* Sliding Circle */}
             <span
@@ -64,7 +65,10 @@ function App() {
                 isDark ? "opacity-100 scale-100" : "opacity-0 scale-0"
               }`}
             >
-              <i className="fa-solid fa-moon text-lg text-blue-900"></i>
+              <i
+                className="fa-solid fa-moon text-lg"
+                style={{ color: "var(--primary-dark)" }}
+              ></i>
             </span>
             {/* Sun Icon */}
             <span
@@ -72,22 +76,22 @@ function App() {
                 isDark ? "opacity-0 scale-0" : "opacity-100 scale-100"
               }`}
             >
-              <i className="fa-solid fa-sun text-lg text-yellow-400"></i>
+              <i
+                className="fa-solid fa-sun text-lg"
+                style={{ color: "var(--primary-color)" }}
+              ></i>
             </span>
           </div>
         </button>
 
         <div
           className={`min-h-screen flex flex-col ${
-            // isDark ? "bg-[#121212] text-white" : "bg-white text-gray-900"
             isDark ? "bg-gray-900 text-white" : "bg-white text-gray-900"
           } transition-colors`}
         >
           <div
             className={`${
-              // isDark ? "bg-[#4608ad]" : "bg-gray-100"
               isDark ? "bg-gray-800" : "bg-gray-100"
-              // isDark ? "bg-[#121212]" : "bg-gray-100"
             } py-2 md:py-16 transition-colors`}
           >
             <div className="container mx-auto max-w-5xl px-4">
@@ -127,11 +131,19 @@ function App() {
         {showScrollTop && (
           <button
             onClick={scrollToTop}
-            className={`fixed bottom-8 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 ${
-              isDark
-                ? "bg-yellow-400 text-gray-900 hover:bg-yellow-300"
-                : "bg-blue-600 text-white hover:bg-blue-700"
-            }`}
+            className={`fixed bottom-8 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110`}
+            style={{
+              backgroundColor: isDark
+                ? "var(--accent-color)"
+                : "var(--primary-color)",
+              color: isDark ? "var(--primary-dark)" : "white",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.opacity = "0.9";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.opacity = "1";
+            }}
             aria-label="Scroll to top"
           >
             <i className="fa-solid fa-arrow-up text-xl"></i>

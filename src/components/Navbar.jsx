@@ -52,11 +52,12 @@ export default function Navbar({ isDark, onToggleDark }) {
             aria-label="Toggle dark mode"
           >
             <div
-              className={`relative inline-flex h-8 w-16 items-center rounded-full transition-all duration-300 ${
-                isDark
-                  ? "bg-linear-to-r from-gray-700 to-gray-800"
-                  : "bg-linear-to-r from-blue-300 to-blue-400"
-              } shadow-lg`}
+              className={`relative inline-flex h-8 w-16 items-center rounded-full transition-all duration-300 shadow-lg`}
+              style={{
+                backgroundImage: isDark
+                  ? "linear-gradient(to right, rgb(55, 65, 81), rgb(31, 41, 55))"
+                  : `linear-gradient(to right, var(--primary-color), var(--primary-color))`,
+              }}
             >
               {/* Sliding Circle */}
               <span
@@ -70,7 +71,10 @@ export default function Navbar({ isDark, onToggleDark }) {
                   isDark ? "opacity-100 scale-100" : "opacity-0 scale-0"
                 }`}
               >
-                <i className="fa-solid fa-moon text-xs text-blue-900"></i>
+                <i
+                  className="fa-solid fa-moon text-xs"
+                  style={{ color: "var(--primary-dark)" }}
+                ></i>
               </span>
               {/* Sun Icon */}
               <span
@@ -78,7 +82,10 @@ export default function Navbar({ isDark, onToggleDark }) {
                   isDark ? "opacity-0 scale-0" : "opacity-100 scale-100"
                 }`}
               >
-                <i className="fa-solid fa-sun text-xs text-yellow-400"></i>
+                <i
+                  className="fa-solid fa-sun text-xs"
+                  style={{ color: "var(--primary-color)" }}
+                ></i>
               </span>
             </div>
           </button>
@@ -159,9 +166,7 @@ export default function Navbar({ isDark, onToggleDark }) {
             <button
               onClick={handleResumeDownload}
               className={`${base} inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                isDark
-                  ? "btn-solid-dark"
-                  : "btn-solid-light"
+                isDark ? "btn-solid-dark" : "btn-solid-light"
               }`}
             >
               Resume

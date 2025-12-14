@@ -18,9 +18,7 @@ export default function ProjectDetails({ isDark }) {
         <button
           onClick={() => navigate("/portfolio")}
           className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
-            isDark
-              ? "btn-solid-dark"
-              : "btn-solid-light"
+            isDark ? "btn-solid-dark" : "btn-solid-light"
           }`}
         >
           Back to Portfolio
@@ -107,9 +105,12 @@ export default function ProjectDetails({ isDark }) {
             {project.details.overview && (
               <div>
                 <h3
-                  className={`text-lg font-semibold mb-2 ${
-                    isDark ? "text-yellow-400" : "text-blue-600"
-                  }`}
+                  className={`text-lg font-semibold mb-2`}
+                  style={{
+                    color: isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)",
+                  }}
                 >
                   Overview
                 </h3>
@@ -120,9 +121,12 @@ export default function ProjectDetails({ isDark }) {
             {project.details.challenge && (
               <div>
                 <h3
-                  className={`text-lg font-semibold mb-2 ${
-                    isDark ? "text-yellow-400" : "text-blue-600"
-                  }`}
+                  className={`text-lg font-semibold mb-2`}
+                  style={{
+                    color: isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)",
+                  }}
                 >
                   Challenge
                 </h3>
@@ -133,9 +137,12 @@ export default function ProjectDetails({ isDark }) {
             {project.details.solution && (
               <div>
                 <h3
-                  className={`text-lg font-semibold mb-2 ${
-                    isDark ? "text-yellow-400" : "text-blue-600"
-                  }`}
+                  className={`text-lg font-semibold mb-2`}
+                  style={{
+                    color: isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)",
+                  }}
                 >
                   Solution
                 </h3>
@@ -165,11 +172,13 @@ export default function ProjectDetails({ isDark }) {
                 }`}
               >
                 <div
-                  className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${
-                    isDark
-                      ? "bg-yellow-400 text-gray-900"
-                      : "bg-blue-600 text-white"
-                  }`}
+                  className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center`}
+                  style={{
+                    backgroundColor: isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)",
+                    color: isDark ? "var(--primary-dark)" : "white",
+                  }}
                 >
                   <i className="fa-solid fa-check"></i>
                 </div>
@@ -196,11 +205,18 @@ export default function ProjectDetails({ isDark }) {
             {project.technologies.map((tech, index) => (
               <span
                 key={index}
-                className={`px-4 py-2 rounded-lg font-semibold ${
-                  isDark
-                    ? "bg-gray-800 text-yellow-400 border border-yellow-400/30"
-                    : "bg-blue-100 text-blue-600 border border-blue-300"
-                }`}
+                className={`px-4 py-2 rounded-lg font-semibold border`}
+                style={{
+                  backgroundColor: isDark
+                    ? "rgb(31, 41, 55)"
+                    : "rgb(243, 244, 246)",
+                  color: isDark
+                    ? "var(--accent-color)"
+                    : "var(--primary-color)",
+                  borderColor: isDark
+                    ? "var(--accent-color)"
+                    : "var(--primary-color)",
+                }}
               >
                 {tech}
               </span>
@@ -232,9 +248,12 @@ export default function ProjectDetails({ isDark }) {
                 }`}
               >
                 <i
-                  className={`fa-solid fa-chart-line mt-1 ${
-                    isDark ? "text-yellow-400" : "text-blue-600"
-                  }`}
+                  className={`fa-solid fa-chart-line mt-1`}
+                  style={{
+                    color: isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)",
+                  }}
                 ></i>
                 <span>{result}</span>
               </li>
@@ -251,11 +270,19 @@ export default function ProjectDetails({ isDark }) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2 ${
-                isDark
-                  ? "bg-yellow-400 text-gray-900 hover:bg-yellow-300"
-                  : "bg-blue-600 text-white hover:bg-blue-700"
-              }`}
+              className={`px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2`}
+              style={{
+                backgroundColor: isDark
+                  ? "var(--accent-color)"
+                  : "var(--primary-color)",
+                color: isDark ? "var(--primary-dark)" : "white",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.opacity = "0.9";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.opacity = "1";
+              }}
             >
               <i className="fa-solid fa-external-link-alt"></i>
               View Live Demo
@@ -283,11 +310,19 @@ export default function ProjectDetails({ isDark }) {
       <div className="text-center">
         <button
           onClick={() => navigate("/portfolio")}
-          className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
-            isDark
-              ? "bg-yellow-400 text-gray-900 hover:bg-yellow-300"
-              : "bg-blue-600 text-white hover:bg-blue-700"
-          }`}
+          className={`px-8 py-3 rounded-lg font-semibold transition-colors`}
+          style={{
+            backgroundColor: isDark
+              ? "var(--accent-color)"
+              : "var(--primary-color)",
+            color: isDark ? "var(--primary-dark)" : "white",
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.opacity = "0.9";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.opacity = "1";
+          }}
         >
           View More Projects
         </button>

@@ -121,11 +121,17 @@ export default function BlogPost({ isDark }) {
       <div className="text-center">
         <button
           onClick={() => navigate("/blog")}
-          className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
-            isDark
-              ? "bg-yellow-400 text-gray-900 hover:bg-yellow-300"
-              : "bg-blue-600 text-white hover:bg-blue-700"
-          }`}
+          className={`px-8 py-3 rounded-lg font-semibold transition-colors`}
+          style={{
+            backgroundColor: isDark ? "var(--accent-color)" : "var(--primary-color)",
+            color: isDark ? "var(--primary-dark)" : "white"
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.opacity = "0.9";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.opacity = "1";
+          }}
         >
           Read More Articles
         </button>

@@ -246,10 +246,13 @@ export default function Portfolio({ isDark }) {
                     <span
                       key={i}
                       className={`text-xs px-2 py-1 rounded ${
-                        isDark
-                          ? "bg-gray-700 text-yellow-400"
-                          : "bg-blue-100 text-blue-600"
+                        isDark ? "bg-gray-700" : "bg-gray-100"
                       }`}
+                      style={{
+                        color: isDark
+                          ? "var(--accent-color)"
+                          : "var(--primary-color)",
+                      }}
                     >
                       {tag}
                     </span>
@@ -262,11 +265,12 @@ export default function Portfolio({ isDark }) {
                       e.preventDefault();
                       navigate(`/portfolio/${project.id}`);
                     }}
-                    className={`inline-flex items-center gap-2 font-semibold transition-colors ${
-                      isDark
-                        ? "text-yellow-400 hover:text-yellow-300"
-                        : "text-blue-600 hover:text-blue-700"
-                    }`}
+                    className={`inline-flex items-center gap-2 font-semibold transition-colors`}
+                    style={{
+                      color: isDark
+                        ? "var(--accent-color)"
+                        : "var(--primary-color)",
+                    }}
                   >
                     View Project
                     <i className="fa-solid fa-arrow-right"></i>
@@ -278,10 +282,18 @@ export default function Portfolio({ isDark }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`text-xl transition-colors ${
-                          isDark
-                            ? "text-gray-400 hover:text-yellow-400"
-                            : "text-gray-600 hover:text-blue-600"
+                          isDark ? "text-gray-400" : "text-gray-600"
                         }`}
+                        onMouseEnter={(e) =>
+                          (e.target.style.color = isDark
+                            ? "var(--accent-color)"
+                            : "var(--primary-color)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.target.style.color = isDark
+                            ? "rgb(107, 114, 128)"
+                            : "rgb(75, 85, 99)")
+                        }
                         title="View on GitHub"
                       >
                         <i className="fa-brands fa-github"></i>
@@ -293,10 +305,18 @@ export default function Portfolio({ isDark }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`text-xl transition-colors ${
-                          isDark
-                            ? "text-gray-400 hover:text-yellow-400"
-                            : "text-gray-600 hover:text-blue-600"
+                          isDark ? "text-gray-400" : "text-gray-600"
                         }`}
+                        onMouseEnter={(e) =>
+                          (e.target.style.color = isDark
+                            ? "var(--accent-color)"
+                            : "var(--primary-color)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.target.style.color = isDark
+                            ? "rgb(107, 114, 128)"
+                            : "rgb(75, 85, 99)")
+                        }
                         title="View Live Demo"
                       >
                         <i className="fa-solid fa-external-link-alt"></i>
@@ -323,10 +343,13 @@ export default function Portfolio({ isDark }) {
               <div
                 key={index}
                 className={`p-6 rounded-lg border-l-4 ${
-                  isDark
-                    ? "bg-gray-800 border-yellow-400"
-                    : "bg-gray-50 border-blue-600"
+                  isDark ? "bg-gray-800" : "bg-gray-50"
                 }`}
+                style={{
+                  borderLeftColor: isDark
+                    ? "var(--accent-color)"
+                    : "var(--primary-color)",
+                }}
               >
                 <div className="flex justify-between items-start mb-2">
                   <div>
@@ -338,9 +361,12 @@ export default function Portfolio({ isDark }) {
                       {edu.degree}
                     </h3>
                     <p
-                      className={`text-sm font-semibold ${
-                        isDark ? "text-yellow-400" : "text-blue-600"
-                      }`}
+                      className={`text-sm font-semibold`}
+                      style={{
+                        color: isDark
+                          ? "var(--accent-color)"
+                          : "var(--primary-color)",
+                      }}
                     >
                       {edu.institution}
                     </p>
@@ -355,10 +381,13 @@ export default function Portfolio({ isDark }) {
                     </span>
                     <span
                       className={`text-xs px-2 py-1 rounded ${
-                        isDark
-                          ? "bg-gray-700 text-yellow-400"
-                          : "bg-blue-100 text-blue-600"
+                        isDark ? "bg-gray-700" : "bg-gray-100"
                       }`}
+                      style={{
+                        color: isDark
+                          ? "var(--accent-color)"
+                          : "var(--primary-color)",
+                      }}
                     >
                       GPA: {edu.gpa}
                     </span>
@@ -393,10 +422,16 @@ export default function Portfolio({ isDark }) {
                     <span
                       key={i}
                       className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                        isDark
-                          ? "bg-gray-800 text-white border border-yellow-400/30"
-                          : "bg-blue-100 text-blue-600 border border-blue-300"
-                      }`}
+                        isDark ? "bg-gray-800" : "bg-gray-100"
+                      } border`}
+                      style={{
+                        borderColor: isDark
+                          ? "var(--accent-color)"
+                          : "var(--primary-color)",
+                        color: isDark
+                          ? "var(--accent-color)"
+                          : "var(--primary-color)",
+                      }}
                     >
                       {skill}
                     </span>
@@ -425,11 +460,13 @@ export default function Portfolio({ isDark }) {
                 }`}
               >
                 <div
-                  className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center ${
-                    isDark
-                      ? "bg-yellow-400 text-gray-900"
-                      : "bg-blue-600 text-white"
-                  }`}
+                  className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center`}
+                  style={{
+                    backgroundColor: isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)",
+                    color: isDark ? "var(--primary-dark)" : "white",
+                  }}
                 >
                   <i className="fa-solid fa-certificate"></i>
                 </div>
@@ -442,9 +479,12 @@ export default function Portfolio({ isDark }) {
                     {cert.title}
                   </h3>
                   <p
-                    className={`text-sm font-semibold ${
-                      isDark ? "text-yellow-400" : "text-blue-600"
-                    }`}
+                    className={`text-sm font-semibold`}
+                    style={{
+                      color: isDark
+                        ? "var(--accent-color)"
+                        : "var(--primary-color)",
+                    }}
                   >
                     {cert.issuer}
                   </p>

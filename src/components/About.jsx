@@ -92,18 +92,14 @@ export default function About({ isDark }) {
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
           <button
             className={`px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-semibold transition ${
-              isDark
-                ? "btn-primary-dark"
-                : "btn-primary-light"
+              isDark ? "btn-primary-dark" : "btn-primary-light"
             }`}
           >
             Download
           </button>
           <button
             className={`px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-semibold transition ${
-              isDark
-                ? "btn-solid-dark"
-                : "btn-solid-light"
+              isDark ? "btn-solid-dark" : "btn-solid-light"
             }`}
           >
             Portfolio
