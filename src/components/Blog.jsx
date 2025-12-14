@@ -60,8 +60,8 @@ export default function Blog({ isDark }) {
                   <span
                     className={`text-xs md:text-sm px-3 py-1 rounded-full font-semibold ${
                       isDark
-                        ? "bg-yellow-400 text-gray-900"
-                        : "bg-blue-600 text-white"
+                        ? "bg-accent-dark text-gray-900"
+                        : "bg-accent-light text-white"
                     }`}
                   >
                     {post.category}
@@ -77,7 +77,7 @@ export default function Blog({ isDark }) {
 
                 {/* Title */}
                 <h2
-                  className={`text-xl md:text-2xl font-bold mb-3 hover:text-yellow-400 transition-colors cursor-pointer ${
+                  className={`text-xl md:text-2xl font-bold mb-3 hover:text-accent-dark transition-colors cursor-pointer ${
                     isDark ? "text-white" : "text-gray-900"
                   }`}
                 >
@@ -110,8 +110,8 @@ export default function Blog({ isDark }) {
                     to={`/blog/${post.id}`}
                     className={`font-semibold transition-colors flex items-center gap-2 ${
                       isDark
-                        ? "text-yellow-400 hover:text-yellow-300"
-                        : "text-blue-600 hover:text-blue-700"
+                        ? "text-accent-dark hover:text-accent-dark opacity-80 hover:opacity-100"
+                        : "text-accent-light hover:text-accent-light opacity-90 hover:opacity-100"
                     }`}
                   >
                     Read More
@@ -130,8 +130,8 @@ export default function Blog({ isDark }) {
               onClick={handleLoadMore}
               className={`px-8 py-3 font-bold rounded-lg transition-colors duration-300 flex items-center gap-2 ${
                 isDark
-                  ? "bg-yellow-400 text-gray-900 hover:bg-yellow-300"
-                  : "bg-blue-600 text-white hover:bg-blue-700"
+                  ? "btn-solid-dark"
+                  : "btn-solid-light"
               }`}
             >
               Load More Articles

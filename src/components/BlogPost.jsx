@@ -19,8 +19,8 @@ export default function BlogPost({ isDark }) {
           onClick={() => navigate("/blog")}
           className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
             isDark
-              ? "bg-yellow-400 text-gray-900 hover:bg-yellow-300"
-              : "bg-blue-600 text-white hover:bg-blue-700"
+              ? "btn-solid-dark"
+              : "btn-solid-light"
           }`}
         >
           Back to Blog
@@ -36,8 +36,8 @@ export default function BlogPost({ isDark }) {
         onClick={() => navigate("/blog")}
         className={`mb-6 flex items-center gap-2 ${
           isDark
-            ? "text-yellow-400 hover:text-yellow-300"
-            : "text-blue-600 hover:text-blue-700"
+            ? "text-accent-dark hover:text-accent-dark opacity-80 hover:opacity-100"
+            : "text-accent-light hover:text-accent-light opacity-90 hover:opacity-100"
         } font-semibold transition-colors`}
       >
         <i className="fa-solid fa-arrow-left"></i>
@@ -58,7 +58,7 @@ export default function BlogPost({ isDark }) {
         <div className="flex items-center gap-4 mb-4">
           <span
             className={`text-xs md:text-sm px-3 py-1 rounded-full font-semibold ${
-              isDark ? "bg-yellow-400 text-gray-900" : "bg-blue-600 text-white"
+              isDark ? "bg-accent-dark text-gray-900" : "bg-accent-light text-white"
             }`}
           >
             {post.category}

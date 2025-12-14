@@ -5,7 +5,7 @@
 
 /* Global Primary Colors */
 :root {
-  --primary-color: #363f7d;
+  --primary-color: #2563eb;
   --primary-dark: #1a1d2b;
   --primary-light: #5a68b8;
   --accent-color: #fbbf24;
@@ -38,3 +38,60 @@ blockquote {
 /* Color code */
 /* #1A1D2B */
 /* #363F7D */
+
+/* Theme utility classes for components */
+.btn-primary-light {
+  @apply border-2 text-white hover:text-white;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-primary-light:hover {
+  background-color: var(--primary-color);
+}
+
+.btn-primary-dark {
+  @apply border-2 text-gray-900 hover:text-gray-900;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.btn-primary-dark:hover {
+  background-color: var(--accent-color);
+}
+
+.btn-solid-light {
+  @apply text-white hover:opacity-90;
+  background-color: var(--primary-color);
+}
+
+.btn-solid-dark {
+  @apply text-gray-900 hover:opacity-90;
+  background-color: var(--accent-color);
+}
+
+.text-accent-light {
+  color: var(--primary-color);
+}
+
+.text-accent-dark {
+  color: var(--accent-color);
+}
+
+.bg-accent-light {
+  @apply text-white;
+  background-color: var(--primary-color);
+}
+
+.bg-accent-dark {
+  @apply text-gray-900;
+  background-color: var(--accent-color);
+}
+
+.border-accent-light {
+  border-color: var(--primary-color);
+}
+
+.border-accent-dark {
+  border-color: var(--accent-color);
+}

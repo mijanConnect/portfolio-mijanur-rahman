@@ -92,8 +92,8 @@ export default function Portfolio({ isDark }) {
               className={`px-4 py-2 rounded-lg font-semibold transition-all capitalize ${
                 activeSection === section
                   ? isDark
-                    ? "bg-yellow-400 text-gray-900"
-                    : "bg-blue-600 text-white"
+                    ? "bg-accent-dark text-gray-900"
+                    : "bg-accent-light text-white"
                   : isDark
                   ? "bg-gray-800 text-gray-400 hover:text-white"
                   : "bg-gray-200 text-gray-600 hover:text-gray-900"
@@ -132,7 +132,7 @@ export default function Portfolio({ isDark }) {
                 >
                   <div
                     className={`text-3xl font-bold mb-2 ${
-                      isDark ? "text-yellow-400" : "text-blue-600"
+                      isDark ? "text-accent-dark" : "text-accent-light"
                     }`}
                   >
                     {stat.value}
@@ -165,8 +165,8 @@ export default function Portfolio({ isDark }) {
                 key={index}
                 className={`p-6 rounded-lg border-l-4 ${
                   isDark
-                    ? "bg-gray-800 border-yellow-400"
-                    : "bg-gray-50 border-blue-600"
+                    ? "bg-gray-800 border-accent-dark"
+                    : "bg-gray-50 border-accent-light"
                 }`}
               >
                 <div className="flex justify-between items-start mb-2">
@@ -180,7 +180,7 @@ export default function Portfolio({ isDark }) {
                     </h3>
                     <p
                       className={`text-sm font-semibold ${
-                        isDark ? "text-yellow-400" : "text-blue-600"
+                        isDark ? "text-accent-dark" : "text-accent-light"
                       }`}
                     >
                       {exp.company}

@@ -7,7 +7,7 @@ export default function About({ isDark }) {
     //     }`}
     //   >
     //     Hi, I'm{" "}
-    //     <span className={`${isDark ? "text-yellow-400" : "text-blue-600"}`}>
+    //     <span className={`${isDark ? "text-accent-dark" : "text-accent-light"}`}>
     //       Mijanur Rahman
     //     </span>
     //     , a Software Engineer passionate about building scalable and
@@ -45,8 +45,8 @@ export default function About({ isDark }) {
     //     </div>
     //   </div>
     // </section>
-    <div className="flex flex-col md:flex-row md:justify-between md:items-center h-full gap-6 md:gap-8">
-      <div className="flex-1 md:self-start w-full">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 flex-1">
+      <div className="order-2 md:order-1 w-full md:w-[420px] md:self-center">
         {/* Profile Image */}
         <div
           className={`w-full overflow-hidden shadow-lg rounded-lg ${
@@ -62,7 +62,7 @@ export default function About({ isDark }) {
       </div>
       {/* Description */}
       <div
-        className={`flex-1 rounded-lg p-6 md:p-8 shadow-lg w-full ${
+        className={`order-1 md:order-2 rounded-lg p-6 md:p-8 shadow-lg w-full md:w-[420px] ${
           isDark ? "bg-gray-800 text-white" : "bg-white text-gray-900"
         }`}
       >
@@ -78,7 +78,7 @@ export default function About({ isDark }) {
             isDark ? "text-white" : "text-gray-900"
           }`}
         >
-          Mijanur Rahman
+          Lorem Ipsum
         </h1>
         <p
           className={`text-sm md:text-base mb-6 ${
@@ -93,8 +93,8 @@ export default function About({ isDark }) {
           <button
             className={`px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-semibold transition ${
               isDark
-                ? "border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900"
-                : "border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                ? "btn-primary-dark"
+                : "btn-primary-light"
             }`}
           >
             Download
@@ -102,8 +102,8 @@ export default function About({ isDark }) {
           <button
             className={`px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-semibold transition ${
               isDark
-                ? "bg-gray-700 text-white hover:bg-gray-600"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                ? "btn-solid-dark"
+                : "btn-solid-light"
             }`}
           >
             Portfolio

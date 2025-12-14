@@ -85,8 +85,8 @@ export default function Contact({ isDark }) {
                   <div
                     className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-lg ${
                       isDark
-                        ? "bg-yellow-400 text-gray-900"
-                        : "bg-blue-600 text-white"
+                        ? "bg-accent-dark text-gray-900"
+                        : "bg-accent-light text-white"
                     }`}
                   >
                     <i className={`fa-solid ${info.icon}`}></i>
@@ -127,8 +127,8 @@ export default function Contact({ isDark }) {
                   rel="noreferrer"
                   className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
                     isDark
-                      ? "bg-gray-700 text-white hover:bg-yellow-400 hover:text-gray-900"
-                      : "bg-gray-200 text-blue-600 hover:bg-blue-600 hover:text-white"
+                      ? "bg-gray-700 text-white hover:bg-accent-dark hover:text-gray-900"
+                      : "bg-gray-200 text-accent-light hover:bg-accent-light hover:text-white"
                   }`}
                 >
                   <i className="fa-brands fa-github"></i>
@@ -139,8 +139,8 @@ export default function Contact({ isDark }) {
                   rel="noreferrer"
                   className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
                     isDark
-                      ? "bg-gray-700 text-white hover:bg-yellow-400 hover:text-gray-900"
-                      : "bg-gray-200 text-blue-600 hover:bg-blue-600 hover:text-white"
+                      ? "bg-gray-700 text-white hover:bg-accent-dark hover:text-gray-900"
+                      : "bg-gray-200 text-accent-light hover:bg-accent-light hover:text-white"
                   }`}
                 >
                   <i className="fa-brands fa-linkedin"></i>
@@ -149,8 +149,8 @@ export default function Contact({ isDark }) {
                   href="mailto:mijan.connect@gmail.com"
                   className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
                     isDark
-                      ? "bg-gray-700 text-white hover:bg-yellow-400 hover:text-gray-900"
-                      : "bg-gray-200 text-blue-600 hover:bg-blue-600 hover:text-white"
+                      ? "bg-gray-700 text-white hover:bg-accent-dark hover:text-gray-900"
+                      : "bg-gray-200 text-accent-light hover:bg-accent-light hover:text-white"
                   }`}
                 >
                   <i className="fa-solid fa-envelope"></i>
@@ -230,8 +230,8 @@ export default function Contact({ isDark }) {
                     placeholder="Please enter your email address"
                     className={`w-full px-4 py-3 rounded-lg border-2 transition-colors focus:outline-none ${
                       isDark
-                        ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-yellow-400"
-                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blue-600"
+                        ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-accent-dark"
+                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-accent-light"
                     }`}
                   />
                 </div>
@@ -256,8 +256,8 @@ export default function Contact({ isDark }) {
                     placeholder="Please enter the subject"
                     className={`w-full px-4 py-3 rounded-lg border-2 transition-colors focus:outline-none ${
                       isDark
-                        ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-yellow-400"
-                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blue-600"
+                        ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-accent-dark"
+                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-accent-light"
                     }`}
                   />
                 </div>
@@ -282,8 +282,8 @@ export default function Contact({ isDark }) {
                     placeholder="Please enter your message or inquiry..."
                     className={`w-full px-4 py-3 rounded-lg border-2 transition-colors focus:outline-none resize-none ${
                       isDark
-                        ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-yellow-400"
-                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blue-600"
+                        ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-accent-dark"
+                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-accent-light"
                     }`}
                   ></textarea>
                 </div>
@@ -293,8 +293,8 @@ export default function Contact({ isDark }) {
                   type="submit"
                   className={`w-full py-3 px-6 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 ${
                     isDark
-                      ? "bg-yellow-400 text-gray-900 hover:bg-yellow-300"
-                      : "bg-blue-600 text-white hover:bg-blue-700"
+                      ? "btn-solid-dark"
+                      : "btn-solid-light"
                   }`}
                 >
                   <span>Send Message</span>

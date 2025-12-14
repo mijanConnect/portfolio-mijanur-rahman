@@ -10,8 +10,8 @@ export default function Navbar({ isDark, onToggleDark }) {
     ? "text-white hover:text-gray-300"
     : "text-gray-900 hover:text-gray-600";
   const activeCls = isDark
-    ? "text-yellow-400 border-b-2 border-yellow-400 pb-1"
-    : "text-blue-600 border-b-2 border-blue-600 pb-1";
+    ? "text-accent-dark border-b-2 border-accent-dark pb-1"
+    : "text-accent-light border-b-2 border-accent-light pb-1";
 
   const linkClass = ({ isActive }) =>
     `${base} ${isActive ? activeCls : inactive}`;
@@ -92,8 +92,8 @@ export default function Navbar({ isDark, onToggleDark }) {
               aria-label="LinkedIn"
               className={`text-3xl transition-all ${
                 isDark
-                  ? "text-white hover:text-yellow-400"
-                  : "text-gray-900 hover:text-blue-600"
+                  ? "text-white hover:text-accent-dark"
+                  : "text-gray-900 hover:text-accent-light"
               }`}
             >
               <i className="fa-brands fa-linkedin" />
@@ -105,8 +105,8 @@ export default function Navbar({ isDark, onToggleDark }) {
               aria-label="GitHub"
               className={`text-3xl transition-all ${
                 isDark
-                  ? "text-white hover:text-yellow-400"
-                  : "text-gray-900 hover:text-blue-600"
+                  ? "text-white hover:text-accent-dark"
+                  : "text-gray-900 hover:text-accent-light"
               }`}
             >
               <i className="fa-brands fa-github" />
@@ -116,8 +116,8 @@ export default function Navbar({ isDark, onToggleDark }) {
               aria-label="Email"
               className={`text-3xl transition-all ${
                 isDark
-                  ? "text-white hover:text-yellow-400"
-                  : "text-gray-900 hover:text-blue-600"
+                  ? "text-white hover:text-accent-dark"
+                  : "text-gray-900 hover:text-accent-light"
               }`}
             >
               <i className="fa-solid fa-envelope" />
@@ -160,8 +160,8 @@ export default function Navbar({ isDark, onToggleDark }) {
               onClick={handleResumeDownload}
               className={`${base} inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
                 isDark
-                  ? "bg-yellow-400 text-gray-900 hover:bg-yellow-300"
-                  : "bg-blue-600 text-white hover:bg-blue-700"
+                  ? "btn-solid-dark"
+                  : "btn-solid-light"
               }`}
             >
               Resume

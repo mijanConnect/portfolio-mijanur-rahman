@@ -14,7 +14,7 @@ export default function Footer({ isDark }) {
           <div>
             <h3
               className={`text-lg font-bold mb-4 ${
-                isDark ? "text-yellow-400" : "text-blue-600"
+                isDark ? "text-accent-dark" : "text-accent-light"
               }`}
             >
               About Me
@@ -33,7 +33,7 @@ export default function Footer({ isDark }) {
           <div>
             <h3
               className={`text-lg font-bold mb-4 ${
-                isDark ? "text-yellow-400" : "text-blue-600"
+                isDark ? "text-accent-dark" : "text-accent-light"
               }`}
             >
               Quick Links
@@ -50,8 +50,8 @@ export default function Footer({ isDark }) {
                     href={link.href}
                     className={`text-sm transition-colors ${
                       isDark
-                        ? "text-gray-400 hover:text-yellow-400"
-                        : "text-gray-600 hover:text-blue-600"
+                        ? "text-gray-400 hover:text-accent-dark"
+                        : "text-gray-600 hover:text-accent-light"
                     }`}
                   >
                     {link.label}
@@ -65,7 +65,7 @@ export default function Footer({ isDark }) {
           <div>
             <h3
               className={`text-lg font-bold mb-4 ${
-                isDark ? "text-yellow-400" : "text-blue-600"
+                isDark ? "text-accent-dark" : "text-accent-light"
               }`}
             >
               Connect
@@ -78,8 +78,8 @@ export default function Footer({ isDark }) {
                 aria-label="LinkedIn"
                 className={`text-2xl transition-all ${
                   isDark
-                    ? "text-gray-400 hover:text-yellow-400"
-                    : "text-gray-600 hover:text-blue-600"
+                    ? "text-gray-400 hover:text-accent-dark"
+                    : "text-gray-600 hover:text-accent-light"
                 }`}
               >
                 <i className="fa-brands fa-linkedin" />
@@ -91,8 +91,8 @@ export default function Footer({ isDark }) {
                 aria-label="GitHub"
                 className={`text-2xl transition-all ${
                   isDark
-                    ? "text-gray-400 hover:text-yellow-400"
-                    : "text-gray-600 hover:text-blue-600"
+                    ? "text-gray-400 hover:text-accent-dark"
+                    : "text-gray-600 hover:text-accent-light"
                 }`}
               >
                 <i className="fa-brands fa-github" />
@@ -102,8 +102,8 @@ export default function Footer({ isDark }) {
                 aria-label="Email"
                 className={`text-2xl transition-all ${
                   isDark
-                    ? "text-gray-400 hover:text-yellow-400"
-                    : "text-gray-600 hover:text-blue-600"
+                    ? "text-gray-400 hover:text-accent-dark"
+                    : "text-gray-600 hover:text-accent-light"
                 }`}
               >
                 <i className="fa-solid fa-envelope" />

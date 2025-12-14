@@ -10,8 +10,8 @@ export default function SocialLink({ isDark }) {
               aria-label="LinkedIn"
               className={`text-2xl md:text-3xl transition-all ${
                 isDark
-                  ? "text-white hover:text-yellow-400"
-                  : "text-black hover:text-blue-600"
+                  ? "text-white hover:text-accent-dark"
+                  : "text-black hover:text-accent-light"
               }`}
             >
               <i className="fa-brands fa-linkedin" />
@@ -24,8 +24,8 @@ export default function SocialLink({ isDark }) {
               aria-label="GitHub"
               className={`text-2xl md:text-3xl transition-all ${
                 isDark
-                  ? "text-white hover:text-yellow-400"
-                  : "text-black hover:text-blue-600"
+                  ? "text-white hover:text-accent-dark"
+                  : "text-black hover:text-accent-light"
               }`}
             >
               <i className="fa-brands fa-github" />
@@ -38,8 +38,8 @@ export default function SocialLink({ isDark }) {
               aria-label="Email"
               className={`text-2xl md:text-3xl transition-all ${
                 isDark
-                  ? "text-white hover:text-yellow-400"
-                  : "text-black hover:text-blue-600"
+                  ? "text-white hover:text-accent-dark"
+                  : "text-black hover:text-accent-light"
               }`}
             >
               <i className="fa-solid fa-envelope" />
