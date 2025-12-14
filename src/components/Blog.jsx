@@ -40,9 +40,16 @@ export default function Blog({ isDark }) {
               key={post.id}
               className={`rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 ${
                 isDark
-                  ? "bg-gray-800 hover:bg-gray-750"
-                  : "bg-gray-100 hover:bg-gray-200"
+                  ? "bg-gray-800/40 hover:bg-gray-800/60"
+                  : "bg-white hover:bg-gray-50"
               }`}
+              style={{
+                border: `1px solid ${
+                  isDark
+                    ? "rgba(68, 255, 146, 0.1)"
+                    : "rgba(209, 213, 219, 0.5)"
+                }`,
+              }}
             >
               {/* Blog Image */}
               <div className="overflow-hidden h-48 md:h-56">
@@ -129,9 +136,7 @@ export default function Blog({ isDark }) {
             <button
               onClick={handleLoadMore}
               className={`px-8 py-3 font-bold rounded-lg transition-colors duration-300 flex items-center gap-2 ${
-                isDark
-                  ? "btn-solid-dark"
-                  : "btn-solid-light"
+                isDark ? "btn-solid-dark" : "btn-solid-light"
               }`}
             >
               Load More Articles

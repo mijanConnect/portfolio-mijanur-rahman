@@ -49,9 +49,16 @@ export default function About({ isDark }) {
       <div className="order-2 md:order-1 w-full md:w-[420px] md:self-center">
         {/* Profile Image */}
         <div
-          className={`w-full overflow-hidden shadow-lg rounded-lg ${
-            isDark ? "bg-gray-800" : "bg-white"
+          className={`w-full overflow-hidden shadow-md rounded-lg ${
+            isDark
+              ? "bg-gray-800/40 hover:bg-gray-800/60"
+              : "bg-white hover:bg-gray-50"
           }`}
+          style={{
+            border: `1px solid ${
+              isDark ? "rgba(68, 255, 146, 0.1)" : "rgba(209, 213, 219, 0.5)"
+            }`,
+          }}
         >
           <img
             src="/assets/avatar.png"
@@ -62,9 +69,16 @@ export default function About({ isDark }) {
       </div>
       {/* Description */}
       <div
-        className={`order-1 md:order-2 rounded-lg p-6 md:p-8 shadow-lg w-full md:w-[420px] ${
-          isDark ? "bg-gray-800 text-white" : "bg-white text-gray-900"
+        className={`order-1 md:order-2 rounded-lg p-6 md:p-8 shadow-md w-full md:w-[420px] ${
+          isDark
+            ? "bg-gray-800/40 hover:bg-gray-800/60"
+            : "bg-white hover:bg-gray-50"
         }`}
+        style={{
+          border: `1px solid ${
+            isDark ? "rgba(68, 255, 146, 0.1)" : "rgba(209, 213, 219, 0.5)"
+          }`,
+        }}
       >
         <p
           className={`text-xs md:text-sm mb-1 ${

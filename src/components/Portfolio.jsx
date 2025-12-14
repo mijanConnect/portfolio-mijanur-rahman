@@ -95,9 +95,16 @@ export default function Portfolio({ isDark }) {
                     ? "bg-accent-dark text-gray-900"
                     : "bg-accent-light text-white"
                   : isDark
-                  ? "bg-gray-800 text-gray-400 hover:text-white"
-                  : "bg-gray-200 text-gray-600 hover:text-gray-900"
+                  ? "bg-gray-800/40 hover:bg-gray-800/60"
+                  : "bg-white hover:bg-gray-50"
               }`}
+              style={{
+                border: `1px solid ${
+                  isDark
+                    ? "rgba(68, 255, 146, 0.1)"
+                    : "rgba(209, 213, 219, 0.5)"
+                }`,
+              }}
             >
               {section}
             </button>
@@ -127,8 +134,17 @@ export default function Portfolio({ isDark }) {
                 <div
                   key={index}
                   className={`p-6 rounded-lg text-center ${
-                    isDark ? "bg-gray-800" : "bg-gray-100"
+                    isDark
+                      ? "bg-gray-800/40 hover:bg-gray-800/60"
+                      : "bg-white hover:bg-gray-50"
                   }`}
+                  style={{
+                    border: `1px solid ${
+                      isDark
+                        ? "rgba(68, 255, 146, 0.1)"
+                        : "rgba(209, 213, 219, 0.5)"
+                    }`,
+                  }}
                 >
                   <div
                     className={`text-3xl font-bold mb-2 ${
@@ -153,7 +169,7 @@ export default function Portfolio({ isDark }) {
         {/* Experience Section */}
         <div id="section-experience" className="mb-16 scroll-mt-28">
           <h2
-            className={`text-3xl font-bold mb-8 ${
+            className={`text-3xl font-bold mb-12 ${
               isDark ? "text-white" : "text-gray-900"
             }`}
           >
@@ -163,46 +179,92 @@ export default function Portfolio({ isDark }) {
             {portfolioData.experience.map((exp, index) => (
               <div
                 key={index}
-                className={`p-6 rounded-lg border-l-4 ${
+                className={`flex gap-4 p-6 rounded-lg transition-all duration-300 ${
                   isDark
-                    ? "bg-gray-800 border-accent-dark"
-                    : "bg-gray-50 border-accent-light"
+                    ? "bg-gray-800/40 hover:bg-gray-800/60"
+                    : "bg-white hover:bg-gray-50"
                 }`}
+                style={{
+                  border: `1px solid ${
+                    isDark
+                      ? "rgba(68, 255, 146, 0.1)"
+                      : "rgba(209, 213, 219, 0.5)"
+                  }`,
+                }}
               >
-                <div className="flex justify-between items-start mb-2">
-                  <div>
+                {/* Company Logo/Icon */}
+                <div className="shrink-0">
+                  <div
+                    className="w-16 h-16 rounded-lg flex items-center justify-center text-2xl transition-transform duration-300 hover:scale-105"
+                    style={{
+                      backgroundColor: isDark
+                        ? "rgba(68, 255, 146, 0.15)"
+                        : "rgba(37, 99, 235, 0.1)",
+                    }}
+                  >
+                    <i
+                      className="fa-solid fa-building"
+                      style={{
+                        color: isDark
+                          ? "var(--accent-color)"
+                          : "var(--primary-color)",
+                      }}
+                    ></i>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  {/* Title and Company Row */}
+                  <div className="mb-2">
                     <h3
-                      className={`text-xl font-bold ${
+                      className={`text-lg font-bold leading-tight mb-1 ${
                         isDark ? "text-white" : "text-gray-900"
                       }`}
                     >
                       {exp.role}
                     </h3>
                     <p
-                      className={`text-sm font-semibold ${
-                        isDark ? "text-accent-dark" : "text-accent-light"
-                      }`}
+                      className={`font-semibold`}
+                      style={{
+                        color: isDark
+                          ? "rgba(255, 255, 255, 0.7)"
+                          : "rgba(0, 0, 0, 0.7)",
+                      }}
                     >
                       {exp.company}
                     </p>
                   </div>
-                  <span
-                    className={`text-sm px-3 py-1 rounded-full ${
-                      isDark
-                        ? "bg-gray-700 text-gray-300"
-                        : "bg-gray-200 text-gray-600"
+
+                  {/* Duration */}
+                  <div
+                    className={`text-sm mb-3 flex items-center gap-2 ${
+                      isDark ? "text-gray-400" : "text-gray-600"
                     }`}
                   >
-                    {exp.period}
-                  </span>
+                    <i className="fa-solid fa-calendar text-xs"></i>
+                    <span>{exp.period}</span>
+                  </div>
+
+                  {/* Description */}
+                  <p
+                    className={`text-sm leading-relaxed ${
+                      isDark ? "text-gray-300" : "text-gray-700"
+                    }`}
+                  >
+                    {exp.description}
+                  </p>
+
+                  {/* Hover Shadow */}
+                  <div
+                    className="absolute top-0 left-0 h-full w-1 rounded-l-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{
+                      backgroundColor: isDark
+                        ? "var(--accent-color)"
+                        : "var(--primary-color)",
+                    }}
+                  ></div>
                 </div>
-                <p
-                  className={`text-sm ${
-                    isDark ? "text-gray-400" : "text-gray-600"
-                  }`}
-                >
-                  {exp.description}
-                </p>
               </div>
             ))}
           </div>
@@ -223,9 +285,16 @@ export default function Portfolio({ isDark }) {
                 key={index}
                 className={`p-6 rounded-lg transition-all ${
                   isDark
-                    ? "bg-gray-800 hover:bg-gray-750 hover:shadow-lg"
-                    : "bg-gray-50 hover:bg-gray-100 hover:shadow-lg"
+                    ? "bg-gray-800/40 hover:bg-gray-800/60"
+                    : "bg-white hover:bg-gray-50"
                 }`}
+                style={{
+                  border: `1px solid ${
+                    isDark
+                      ? "rgba(68, 255, 146, 0.1)"
+                      : "rgba(209, 213, 219, 0.5)"
+                  }`,
+                }}
               >
                 <h3
                   className={`text-xl font-bold mb-2 ${
@@ -339,62 +408,75 @@ export default function Portfolio({ isDark }) {
             Education
           </h2>
           <div className="animate-fadeIn space-y-6">
-            {portfolioData.education.map((edu, index) => (
-              <div
-                key={index}
-                className={`p-6 rounded-lg border-l-4 ${
-                  isDark ? "bg-gray-800" : "bg-gray-50"
-                }`}
-                style={{
-                  borderLeftColor: isDark
-                    ? "var(--accent-color)"
-                    : "var(--primary-color)",
-                }}
-              >
-                <div className="flex justify-between items-start mb-2">
-                  <div>
-                    <h3
-                      className={`text-xl font-bold ${
-                        isDark ? "text-white" : "text-gray-900"
-                      }`}
-                    >
-                      {edu.degree}
-                    </h3>
-                    <p
-                      className={`text-sm font-semibold`}
-                      style={{
-                        color: isDark
-                          ? "var(--accent-color)"
-                          : "var(--primary-color)",
-                      }}
-                    >
-                      {edu.institution}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <span
-                      className={`text-sm font-semibold block mb-1 ${
-                        isDark ? "text-gray-300" : "text-gray-700"
-                      }`}
-                    >
-                      {edu.year}
-                    </span>
-                    <span
-                      className={`text-xs px-2 py-1 rounded ${
-                        isDark ? "bg-gray-700" : "bg-gray-100"
-                      }`}
-                      style={{
-                        color: isDark
-                          ? "var(--accent-color)"
-                          : "var(--primary-color)",
-                      }}
-                    >
-                      GPA: {edu.gpa}
-                    </span>
+            <div
+              className={`rounded-lg`}
+              style={{
+                border: `1px solid ${
+                  isDark
+                    ? "rgba(68, 255, 146, 0.1)"
+                    : "rgba(209, 213, 219, 0.5)"
+                }`,
+              }}
+            >
+              {portfolioData.education.map((edu, index) => (
+                <div
+                  key={index}
+                  className={`p-6 rounded-lg border-l-4 ${
+                    isDark
+                      ? "bg-gray-800/40 hover:bg-gray-800/60"
+                      : "bg-white hover:bg-gray-50"
+                  }`}
+                  style={{
+                    borderLeftColor: isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)",
+                  }}
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h3
+                        className={`text-xl font-bold ${
+                          isDark ? "text-white" : "text-gray-900"
+                        }`}
+                      >
+                        {edu.degree}
+                      </h3>
+                      <p
+                        className={`text-sm font-semibold`}
+                        style={{
+                          color: isDark
+                            ? "var(--accent-color)"
+                            : "var(--primary-color)",
+                        }}
+                      >
+                        {edu.institution}
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <span
+                        className={`text-sm font-semibold block mb-1 ${
+                          isDark ? "text-gray-300" : "text-gray-700"
+                        }`}
+                      >
+                        {edu.year}
+                      </span>
+                      <span
+                        className={`text-xs px-2 py-1 rounded ${
+                          isDark ? "bg-gray-700" : "bg-gray-100"
+                        }`}
+                        style={{
+                          color: isDark
+                            ? "var(--accent-color)"
+                            : "var(--primary-color)",
+                        }}
+                      >
+                        GPA: {edu.gpa}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
@@ -422,15 +504,16 @@ export default function Portfolio({ isDark }) {
                     <span
                       key={i}
                       className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                        isDark ? "bg-gray-800" : "bg-gray-100"
-                      } border`}
+                        isDark
+                          ? "bg-gray-800/40 hover:bg-gray-800/60"
+                          : "bg-white hover:bg-gray-50"
+                      }`}
                       style={{
-                        borderColor: isDark
-                          ? "var(--accent-color)"
-                          : "var(--primary-color)",
-                        color: isDark
-                          ? "var(--accent-color)"
-                          : "var(--primary-color)",
+                        border: `1px solid ${
+                          isDark
+                            ? "rgba(68, 255, 146, 0.1)"
+                            : "rgba(209, 213, 219, 0.5)"
+                        }`,
                       }}
                     >
                       {skill}
@@ -456,8 +539,17 @@ export default function Portfolio({ isDark }) {
               <div
                 key={index}
                 className={`p-6 rounded-lg flex items-start gap-4 ${
-                  isDark ? "bg-gray-800" : "bg-gray-50"
+                  isDark
+                    ? "bg-gray-800/40 hover:bg-gray-800/60"
+                    : "bg-white hover:bg-gray-50"
                 }`}
+                style={{
+                  border: `1px solid ${
+                    isDark
+                      ? "rgba(68, 255, 146, 0.1)"
+                      : "rgba(209, 213, 219, 0.5)"
+                  }`,
+                }}
               >
                 <div
                   className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center`}

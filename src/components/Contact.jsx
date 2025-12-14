@@ -78,9 +78,16 @@ export default function Contact({ isDark }) {
                   href={info.link}
                   className={`flex items-start gap-4 p-4 rounded-lg transition-all ${
                     isDark
-                      ? "bg-gray-800 hover:bg-gray-700"
-                      : "bg-gray-100 hover:bg-gray-200"
+                      ? "bg-gray-800/40 hover:bg-gray-800/60"
+                      : "bg-white hover:bg-gray-50"
                   }`}
+                  style={{
+                    border: `1px solid ${
+                      isDark
+                        ? "rgba(68, 255, 146, 0.1)"
+                        : "rgba(209, 213, 219, 0.5)"
+                    }`,
+                  }}
                 >
                   <div
                     className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-lg ${
@@ -110,8 +117,17 @@ export default function Contact({ isDark }) {
             {/* Social Links */}
             <div
               className={`mt-8 p-6 rounded-lg ${
-                isDark ? "bg-gray-800" : "bg-gray-100"
+                isDark
+                  ? "bg-gray-800/40 hover:bg-gray-800/60"
+                  : "bg-white hover:bg-gray-50"
               }`}
+              style={{
+                border: `1px solid ${
+                  isDark
+                    ? "rgba(68, 255, 146, 0.1)"
+                    : "rgba(209, 213, 219, 0.5)"
+                }`,
+              }}
             >
               <h3
                 className={`font-semibold mb-4 ${
@@ -163,8 +179,15 @@ export default function Contact({ isDark }) {
           <div className="lg:col-span-2">
             <div
               className={`p-8 rounded-lg ${
-                isDark ? "bg-gray-800" : "bg-gray-50"
+                isDark ? "bg-gray-800/40" : "bg-white hover:bg-gray-50"
               }`}
+              style={{
+                border: `1px solid ${
+                  isDark
+                    ? "rgba(68, 255, 146, 0.1)"
+                    : "rgba(209, 213, 219, 0.5)"
+                }`,
+              }}
             >
               {isSubmitted && (
                 <div

@@ -87,8 +87,15 @@ export default function ProjectDetails({ isDark }) {
       {project.details && (
         <div
           className={`rounded-lg p-6 mb-8 ${
-            isDark ? "bg-gray-800" : "bg-gray-100"
+            isDark
+              ? "bg-gray-800/40 hover:bg-gray-800/60"
+              : "bg-white hover:bg-gray-50"
           }`}
+          style={{
+            border: `1px solid ${
+              isDark ? "rgba(68, 255, 146, 0.1)" : "rgba(209, 213, 219, 0.5)"
+            }`,
+          }}
         >
           <h2
             className={`text-2xl font-bold mb-4 ${
@@ -167,9 +174,18 @@ export default function ProjectDetails({ isDark }) {
             {project.features.map((feature, index) => (
               <div
                 key={index}
-                className={`p-4 rounded-lg flex items-start gap-3 ${
-                  isDark ? "bg-gray-800" : "bg-gray-100"
+                className={`p-4 rounded-lg flex items-center gap-3 ${
+                  isDark
+                    ? "bg-gray-800/40 hover:bg-gray-800/60"
+                    : "bg-white hover:bg-gray-50"
                 }`}
+                style={{
+                  border: `1px solid ${
+                    isDark
+                      ? "rgba(68, 255, 146, 0.1)"
+                      : "rgba(209, 213, 219, 0.5)"
+                  }`,
+                }}
               >
                 <div
                   className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center`}
@@ -229,8 +245,15 @@ export default function ProjectDetails({ isDark }) {
       {project.results && project.results.length > 0 && (
         <div
           className={`rounded-lg p-6 mb-8 ${
-            isDark ? "bg-gray-800" : "bg-gray-100"
+            isDark
+              ? "bg-gray-800/40 hover:bg-gray-800/60"
+              : "bg-white hover:bg-gray-50"
           }`}
+          style={{
+            border: `1px solid ${
+              isDark ? "rgba(68, 255, 146, 0.1)" : "rgba(209, 213, 219, 0.5)"
+            }`,
+          }}
         >
           <h2
             className={`text-2xl font-bold mb-4 ${

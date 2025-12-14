@@ -18,9 +18,7 @@ export default function BlogPost({ isDark }) {
         <button
           onClick={() => navigate("/blog")}
           className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
-            isDark
-              ? "btn-solid-dark"
-              : "btn-solid-light"
+            isDark ? "btn-solid-dark" : "btn-solid-light"
           }`}
         >
           Back to Blog
@@ -58,7 +56,9 @@ export default function BlogPost({ isDark }) {
         <div className="flex items-center gap-4 mb-4">
           <span
             className={`text-xs md:text-sm px-3 py-1 rounded-full font-semibold ${
-              isDark ? "bg-accent-dark text-gray-900" : "bg-accent-light text-white"
+              isDark
+                ? "bg-accent-dark text-gray-900"
+                : "bg-accent-light text-white"
             }`}
           >
             {post.category}
@@ -101,8 +101,15 @@ export default function BlogPost({ isDark }) {
       {/* Author Section */}
       <div
         className={`rounded-lg p-6 mb-8 ${
-          isDark ? "bg-gray-800" : "bg-gray-100"
+          isDark
+            ? "bg-gray-800/40 hover:bg-gray-800/60"
+            : "bg-white hover:bg-gray-50"
         }`}
+        style={{
+          border: `1px solid ${
+            isDark ? "rgba(68, 255, 146, 0.1)" : "rgba(209, 213, 219, 0.5)"
+          }`,
+        }}
       >
         <h3
           className={`text-xl font-bold mb-2 ${
@@ -123,8 +130,10 @@ export default function BlogPost({ isDark }) {
           onClick={() => navigate("/blog")}
           className={`px-8 py-3 rounded-lg font-semibold transition-colors`}
           style={{
-            backgroundColor: isDark ? "var(--accent-color)" : "var(--primary-color)",
-            color: isDark ? "var(--primary-dark)" : "white"
+            backgroundColor: isDark
+              ? "var(--accent-color)"
+              : "var(--primary-color)",
+            color: isDark ? "var(--primary-dark)" : "white",
           }}
           onMouseEnter={(e) => {
             e.target.style.opacity = "0.9";
