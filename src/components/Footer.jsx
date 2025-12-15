@@ -49,10 +49,21 @@ export default function Footer({ isDark }) {
                   <a
                     href={link.href}
                     className={`text-sm transition-colors ${
-                      isDark
-                        ? "text-gray-400 hover:text-accent-dark"
-                        : "text-gray-600 hover:text-accent-light"
+                      isDark ? "text-gray-400" : "text-gray-600"
                     }`}
+                    style={{
+                      color: isDark ? "rgb(156, 163, 175)" : "rgb(75, 85, 99)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.color = isDark
+                        ? "var(--accent-color)"
+                        : "var(--primary-color)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.color = isDark
+                        ? "rgb(156, 163, 175)"
+                        : "rgb(75, 85, 99)";
+                    }}
                   >
                     {link.label}
                   </a>
@@ -76,11 +87,20 @@ export default function Footer({ isDark }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className={`text-2xl transition-all ${
-                  isDark
-                    ? "text-gray-400 hover:text-accent-dark"
-                    : "text-gray-600 hover:text-accent-light"
-                }`}
+                className="text-2xl transition-colors"
+                style={{
+                  color: isDark ? "rgb(156, 163, 175)" : "rgb(75, 85, 99)",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = isDark
+                    ? "var(--accent-color)"
+                    : "var(--primary-color)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = isDark
+                    ? "rgb(156, 163, 175)"
+                    : "rgb(75, 85, 99)";
+                }}
               >
                 <i className="fa-brands fa-linkedin" />
               </a>
@@ -89,22 +109,40 @@ export default function Footer({ isDark }) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className={`text-2xl transition-all ${
-                  isDark
-                    ? "text-gray-400 hover:text-accent-dark"
-                    : "text-gray-600 hover:text-accent-light"
-                }`}
+                className="text-2xl transition-colors"
+                style={{
+                  color: isDark ? "rgb(156, 163, 175)" : "rgb(75, 85, 99)",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = isDark
+                    ? "var(--accent-color)"
+                    : "var(--primary-color)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = isDark
+                    ? "rgb(156, 163, 175)"
+                    : "rgb(75, 85, 99)";
+                }}
               >
                 <i className="fa-brands fa-github" />
               </a>
               <a
                 href="mailto:mijan.connect@gmail.com"
                 aria-label="Email"
-                className={`text-2xl transition-all ${
-                  isDark
-                    ? "text-gray-400 hover:text-accent-dark"
-                    : "text-gray-600 hover:text-accent-light"
-                }`}
+                className="text-2xl transition-colors"
+                style={{
+                  color: isDark ? "rgb(156, 163, 175)" : "rgb(75, 85, 99)",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = isDark
+                    ? "var(--accent-color)"
+                    : "var(--primary-color)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = isDark
+                    ? "rgb(156, 163, 175)"
+                    : "rgb(75, 85, 99)";
+                }}
               >
                 <i className="fa-solid fa-envelope" />
               </a>
@@ -129,7 +167,8 @@ export default function Footer({ isDark }) {
           <p
             className={`text-sm ${isDark ? "text-gray-400" : "text-gray-600"}`}
           >
-            Designed & Developed <span className="text-red-500"></span> by Mijanur Rahman
+            Designed & Developed <span className="text-red-500"></span> by
+            Mijanur Rahman
           </p>
         </div>
       </div>

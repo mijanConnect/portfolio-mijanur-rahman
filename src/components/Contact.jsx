@@ -141,11 +141,29 @@ export default function Contact({ isDark }) {
                   href="https://github.com/mijanConnect"
                   target="_blank"
                   rel="noreferrer"
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
-                    isDark
-                      ? "bg-gray-700 text-white hover:bg-accent-dark hover:text-gray-900"
-                      : "bg-gray-200 text-accent-light hover:bg-accent-light hover:text-white"
-                  }`}
+                  className="w-10 h-10 rounded-lg flex items-center justify-center transition-all"
+                  style={{
+                    backgroundColor: isDark
+                      ? "rgb(55, 65, 81)"
+                      : "rgb(229, 231, 235)",
+                    color: isDark ? "white" : "var(--primary-color)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)";
+                    e.currentTarget.style.color = isDark
+                      ? "var(--primary-dark)"
+                      : "white";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = isDark
+                      ? "rgb(55, 65, 81)"
+                      : "rgb(229, 231, 235)";
+                    e.currentTarget.style.color = isDark
+                      ? "white"
+                      : "var(--primary-color)";
+                  }}
                 >
                   <i className="fa-brands fa-github"></i>
                 </a>
@@ -153,21 +171,57 @@ export default function Contact({ isDark }) {
                   href="https://www.linkedin.com/in/mijanConnect"
                   target="_blank"
                   rel="noreferrer"
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
-                    isDark
-                      ? "bg-gray-700 text-white hover:bg-accent-dark hover:text-gray-900"
-                      : "bg-gray-200 text-accent-light hover:bg-accent-light hover:text-white"
-                  }`}
+                  className="w-10 h-10 rounded-lg flex items-center justify-center transition-all"
+                  style={{
+                    backgroundColor: isDark
+                      ? "rgb(55, 65, 81)"
+                      : "rgb(229, 231, 235)",
+                    color: isDark ? "white" : "var(--primary-color)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)";
+                    e.currentTarget.style.color = isDark
+                      ? "var(--primary-dark)"
+                      : "white";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = isDark
+                      ? "rgb(55, 65, 81)"
+                      : "rgb(229, 231, 235)";
+                    e.currentTarget.style.color = isDark
+                      ? "white"
+                      : "var(--primary-color)";
+                  }}
                 >
                   <i className="fa-brands fa-linkedin"></i>
                 </a>
                 <a
                   href="mailto:mijan.connect@gmail.com"
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
-                    isDark
-                      ? "bg-gray-700 text-white hover:bg-accent-dark hover:text-gray-900"
-                      : "bg-gray-200 text-accent-light hover:bg-accent-light hover:text-white"
-                  }`}
+                  className="w-10 h-10 rounded-lg flex items-center justify-center transition-all"
+                  style={{
+                    backgroundColor: isDark
+                      ? "rgb(55, 65, 81)"
+                      : "rgb(229, 231, 235)",
+                    color: isDark ? "white" : "var(--primary-color)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)";
+                    e.currentTarget.style.color = isDark
+                      ? "var(--primary-dark)"
+                      : "white";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = isDark
+                      ? "rgb(55, 65, 81)"
+                      : "rgb(229, 231, 235)";
+                    e.currentTarget.style.color = isDark
+                      ? "white"
+                      : "var(--primary-color)";
+                  }}
                 >
                   <i className="fa-solid fa-envelope"></i>
                 </a>
@@ -227,9 +281,11 @@ export default function Contact({ isDark }) {
                     placeholder="Please enter your full name"
                     className={`w-full px-4 py-3 rounded-lg border-2 transition-colors focus:outline-none`}
                     style={{
-                      backgroundColor: isDark ? "rgb(55, 65, 81)" : "white",
+                      backgroundColor: isDark
+                        ? "rgba(209, 213, 219, 0.05)"
+                        : "white",
                       borderColor: isDark
-                        ? "rgb(75, 85, 99)"
+                        ? "rgba(209, 213, 219, 0.1)"
                         : "rgb(209, 213, 219)",
                       color: isDark ? "white" : "rgb(17, 24, 39)",
                     }}
@@ -266,9 +322,11 @@ export default function Contact({ isDark }) {
                     placeholder="Please enter your email address"
                     className={`w-full px-4 py-3 rounded-lg border-2 transition-colors focus:outline-none`}
                     style={{
-                      backgroundColor: isDark ? "rgb(55, 65, 81)" : "white",
+                      backgroundColor: isDark
+                        ? "rgba(209, 213, 219, 0.05)"
+                        : "white",
                       borderColor: isDark
-                        ? "rgb(75, 85, 99)"
+                        ? "rgba(209, 213, 219, 0.1)"
                         : "rgb(209, 213, 219)",
                       color: isDark ? "white" : "rgb(17, 24, 39)",
                     }}
@@ -305,9 +363,11 @@ export default function Contact({ isDark }) {
                     placeholder="Please enter your message or inquiry..."
                     className={`w-full px-4 py-3 rounded-lg border-2 transition-colors focus:outline-none resize-none`}
                     style={{
-                      backgroundColor: isDark ? "rgb(55, 65, 81)" : "white",
+                      backgroundColor: isDark
+                        ? "rgba(209, 213, 219, 0.05)"
+                        : "white",
                       borderColor: isDark
-                        ? "rgb(75, 85, 99)"
+                        ? "rgba(209, 213, 219, 0.1)"
                         : "rgb(209, 213, 219)",
                       color: isDark ? "white" : "rgb(17, 24, 39)",
                     }}

@@ -1,4 +1,11 @@
 export default function SocialLink({ isDark }) {
+  const getThemeColor = (colorName) => {
+    const color = getComputedStyle(document.documentElement)
+      .getPropertyValue(colorName)
+      .trim();
+    return color || colorName === "--accent-color";
+  };
+
   return (
     <>
       <div>
@@ -8,11 +15,18 @@ export default function SocialLink({ isDark }) {
               href="https://www.linkedin.com/in/mijanConnect"
               target="_blank"
               aria-label="LinkedIn"
-              className={`text-2xl md:text-3xl transition-all ${
-                isDark
-                  ? "text-white hover:text-accent-dark"
-                  : "text-black hover:text-accent-light"
-              }`}
+              className="text-2xl md:text-3xl transition-all"
+              style={{
+                color: isDark ? "white" : "black",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = isDark
+                  ? getThemeColor("--accent-color")
+                  : getThemeColor("--primary-color");
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = isDark ? "white" : "black";
+              }}
             >
               <i className="fa-brands fa-linkedin" />
             </a>
@@ -22,11 +36,18 @@ export default function SocialLink({ isDark }) {
               href="https://github.com/mijanConnect"
               target="_blank"
               aria-label="GitHub"
-              className={`text-2xl md:text-3xl transition-all ${
-                isDark
-                  ? "text-white hover:text-accent-dark"
-                  : "text-black hover:text-accent-light"
-              }`}
+              className="text-2xl md:text-3xl transition-all"
+              style={{
+                color: isDark ? "white" : "black",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = isDark
+                  ? getThemeColor("--accent-color")
+                  : getThemeColor("--primary-color");
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = isDark ? "white" : "black";
+              }}
             >
               <i className="fa-brands fa-github" />
             </a>
@@ -36,11 +57,18 @@ export default function SocialLink({ isDark }) {
               href="mailto:mijan.connect@gmail.com"
               target="_blank"
               aria-label="Email"
-              className={`text-2xl md:text-3xl transition-all ${
-                isDark
-                  ? "text-white hover:text-accent-dark"
-                  : "text-black hover:text-accent-light"
-              }`}
+              className="text-2xl md:text-3xl transition-all"
+              style={{
+                color: isDark ? "white" : "black",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = isDark
+                  ? getThemeColor("--accent-color")
+                  : getThemeColor("--primary-color");
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = isDark ? "white" : "black";
+              }}
             >
               <i className="fa-solid fa-envelope" />
             </a>
