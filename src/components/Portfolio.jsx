@@ -74,8 +74,10 @@ export default function Portfolio({ isDark }) {
         {/* Navigation Tabs */}
         {/* Sticky Navigation Tabs */}
         <div
-          className={`sticky top-0 z-50 flex flex-wrap gap-3 pb-6 pt-4 border-b ${
-            isDark ? "border-gray-700 bg-(--background-dark)" : "border-gray-300 bg-white"
+          className={`sticky top-0 z-50 flex flex-wrap gap-3 pb-4 pt-4 border-b ${
+            isDark
+              ? "border-gray-700 bg-(--background-dark)"
+              : "border-gray-300 bg-white"
           }`}
         >
           {[
@@ -89,7 +91,7 @@ export default function Portfolio({ isDark }) {
             <button
               key={section}
               onClick={() => handleTabClick(section)}
-              className={`px-4 py-2 rounded-lg font-semibold transition-all capitalize ${
+              className={`px-4 py-1.5 rounded-full font-semibold transition-all capitalize ${
                 activeSection === section
                   ? isDark
                     ? "bg-accent-dark text-gray-900"
@@ -220,13 +222,17 @@ export default function Portfolio({ isDark }) {
                   </h3>
 
                   {/* Company */}
-                  <p
-                    className={`text-sm font-medium ${
-                      isDark ? "text-gray-300" : "text-gray-700"
-                    }`}
-                  >
-                    {exp.company}
-                  </p>
+                  <a href="#" className="inline-block">
+                    <p
+                      className={`text-sm font-medium transition ${
+                        isDark
+                          ? "text-gray-300 hover:text-white"
+                          : "text-gray-700 hover:text-gray-900"
+                      }`}
+                    >
+                      {exp.company}
+                    </p>
+                  </a>
 
                   {/* Date */}
                   <p
@@ -255,7 +261,6 @@ export default function Portfolio({ isDark }) {
           </div>
         </div>
 
-        {/* Projects Section */}
         {/* Projects Section */}
         <div id="section-projects" className="mb-16 scroll-mt-28">
           <h2
@@ -431,7 +436,7 @@ export default function Portfolio({ isDark }) {
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h3
-                        className={`text-xl font-bold ${
+                        className={`text-xl font-bold mb-1 ${
                           isDark ? "text-white" : "text-gray-900"
                         }`}
                       >
@@ -450,7 +455,7 @@ export default function Portfolio({ isDark }) {
                     </div>
                     <div className="text-right text-nowrap">
                       <span
-                        className={`text-sm font-semibold block mb-1 ${
+                        className={`text-sm font-semibold block mb-2 ${
                           isDark ? "text-gray-300" : "text-gray-700"
                         }`}
                       >

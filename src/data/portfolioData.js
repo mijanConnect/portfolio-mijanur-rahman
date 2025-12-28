@@ -213,14 +213,16 @@ export const portfolioData = {
       githubUrl: "#",
     },
   ],
+  // New education section added
   education: [
     {
-      degree: "Bachelor of Science in Computer Science and Engineering",
+      degree: "BSc in CSE",
       institution: "Daffodil International University",
       year: "2021",
-      gpa: "3.8/4.0",
+      gpa: "3.39/4.0",
     },
   ],
+  // New skills added
   skills: [
     {
       category: "Frontend",
@@ -243,6 +245,7 @@ export const portfolioData = {
       skills: ["Git", "GitHub", "Docker", "REST APIs", "Responsive Design"],
     },
   ],
+  // New certifications added
   certifications: [
     {
       title: "React Advanced Patterns",

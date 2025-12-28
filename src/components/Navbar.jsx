@@ -165,7 +165,7 @@ export default function Navbar({ isDark, onToggleDark }) {
           <li onClick={handleClose}>
             <button
               onClick={handleResumeDownload}
-              className={`${base} inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+              className={`${base} inline-flex items-center gap-2 px-7 py-2 rounded-full transition-all ${
                 isDark ? "btn-solid-dark" : "btn-solid-light"
               }`}
             >

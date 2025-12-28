@@ -55,7 +55,7 @@ export default function BlogPost({ isDark }) {
       <div className="mb-8">
         <div className="flex items-center gap-4 mb-4">
           <span
-            className={`text-xs md:text-sm px-3 py-1 rounded-full font-semibold ${
+            className={`text-xs md:text-sm px-4 py-1 rounded-full font-semibold ${
               isDark
                 ? "bg-accent-dark text-gray-900"
                 : "bg-accent-light text-white"
@@ -128,7 +128,7 @@ export default function BlogPost({ isDark }) {
       <div className="text-center">
         <button
           onClick={() => navigate("/blog")}
-          className={`px-8 py-3 rounded-lg font-semibold transition-colors`}
+          className={`px-8 py-3 rounded-full font-semibold transition-colors`}
           style={{
             backgroundColor: isDark
               ? "var(--accent-color)"

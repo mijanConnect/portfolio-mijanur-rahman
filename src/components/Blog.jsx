@@ -135,7 +135,7 @@ export default function Blog({ isDark }) {
           <div className="mt-12 flex justify-center">
             <button
               onClick={handleLoadMore}
-              className={`px-8 py-3 font-bold rounded-lg transition-colors duration-300 flex items-center gap-2 ${
+              className={`px-8 py-3 font-bold rounded-full transition-colors duration-300 flex items-center gap-2 ${
                 isDark ? "btn-solid-dark" : "btn-solid-light"
               }`}
             >

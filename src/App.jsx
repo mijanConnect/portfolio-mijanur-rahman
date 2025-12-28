@@ -93,14 +93,23 @@ function App() {
         >
           <div
             className={`${
-              isDark ? "bg-(--background-dark-header)" : "bg-gray-100"
-            } py-2 md:py-16 transition-colors`}
+              isDark ? "bg-(--background-dark)" : "bg-gray-100"
+            } transition-colors`}
           >
-            <div className="container mx-auto max-w-5xl px-4">
-              {/* <Logo /> */}
-              <Navbar isDark={isDark} onToggleDark={() => setIsDark(!isDark)} />
-              <div className="hidden md:block">
-                <SocialLink isDark={isDark} />
+            <div
+              className={`${
+                isDark ? "bg-gray-800/40" : ""
+              } py-2 md:py-16 transition-colors`}
+            >
+              <div className="container mx-auto max-w-5xl px-4">
+                {/* <Logo /> */}
+                <Navbar
+                  isDark={isDark}
+                  onToggleDark={() => setIsDark(!isDark)}
+                />
+                <div className="hidden md:block">
+                  <SocialLink isDark={isDark} />
+                </div>
               </div>
             </div>
           </div>

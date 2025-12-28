@@ -279,10 +279,10 @@ export default function Contact({ isDark }) {
                     onChange={handleChange}
                     required
                     placeholder="Please enter your full name"
-                    className={`w-full px-4 py-3 rounded-lg border-2 transition-colors focus:outline-none`}
+                    className={`w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none`}
                     style={{
                       backgroundColor: isDark
-                        ? "rgba(209, 213, 219, 0.05)"
+                        ? "rgba(209, 213, 219, 0.02)"
                         : "white",
                       borderColor: isDark
                         ? "rgba(209, 213, 219, 0.1)"
@@ -320,10 +320,10 @@ export default function Contact({ isDark }) {
                     onChange={handleChange}
                     required
                     placeholder="Please enter your email address"
-                    className={`w-full px-4 py-3 rounded-lg border-2 transition-colors focus:outline-none`}
+                    className={`w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none`}
                     style={{
                       backgroundColor: isDark
-                        ? "rgba(209, 213, 219, 0.05)"
+                        ? "rgba(209, 213, 219, 0.02)"
                         : "white",
                       borderColor: isDark
                         ? "rgba(209, 213, 219, 0.1)"
@@ -361,10 +361,10 @@ export default function Contact({ isDark }) {
                     required
                     rows="5"
                     placeholder="Please enter your message or inquiry..."
-                    className={`w-full px-4 py-3 rounded-lg border-2 transition-colors focus:outline-none resize-none`}
+                    className={`w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none resize-none`}
                     style={{
                       backgroundColor: isDark
-                        ? "rgba(209, 213, 219, 0.05)"
+                        ? "rgba(209, 213, 219, 0.02)"
                         : "white",
                       borderColor: isDark
                         ? "rgba(209, 213, 219, 0.1)"
@@ -386,7 +386,7 @@ export default function Contact({ isDark }) {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 ${
+                  className={`w-full py-3 px-6 rounded-full font-semibold transition-all flex items-center justify-center gap-2 ${
                     isDark ? "btn-solid-dark" : "btn-solid-light"
                   }`}
                 >

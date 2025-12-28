@@ -59,7 +59,7 @@ export default function ProjectDetails({ isDark }) {
           {project.tags.map((tag, i) => (
             <span
               key={i}
-              className={`text-xs md:text-sm px-3 py-1 rounded-full font-semibold ${
+              className={`text-xs md:text-sm px-4 py-1 rounded-full font-semibold ${
                 isDark
                   ? "bg-accent-dark text-gray-900"
                   : "bg-accent-light text-white"
@@ -221,7 +221,7 @@ export default function ProjectDetails({ isDark }) {
             {project.technologies.map((tech, index) => (
               <span
                 key={index}
-                className={`px-4 py-2 rounded-lg font-semibold border`}
+                className={`px-5 py-2 rounded-full font-semibold border`}
                 style={{
                   backgroundColor: isDark
                     ? "rgb(31, 41, 55)"
@@ -293,7 +293,7 @@ export default function ProjectDetails({ isDark }) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2`}
+              className={`px-6 py-3 rounded-full font-semibold transition-colors flex items-center gap-2`}
               style={{
                 backgroundColor: isDark
                   ? "var(--accent-color)"
@@ -316,7 +316,7 @@ export default function ProjectDetails({ isDark }) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2 ${
+              className={`px-6 py-3 rounded-full font-semibold transition-colors flex items-center gap-2 ${
                 isDark
                   ? "bg-gray-700 text-white hover:bg-gray-600"
                   : "bg-gray-200 text-gray-900 hover:bg-gray-300"
@@ -333,7 +333,7 @@ export default function ProjectDetails({ isDark }) {
       <div className="text-center">
         <button
           onClick={() => navigate("/portfolio")}
-          className={`px-8 py-3 rounded-lg font-semibold transition-colors`}
+          className={`px-8 py-3 rounded-full font-semibold transition-colors`}
           style={{
             backgroundColor: isDark
               ? "var(--accent-color)"
