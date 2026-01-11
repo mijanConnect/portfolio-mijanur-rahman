@@ -214,7 +214,7 @@ export default function Portfolio({ isDark }) {
                 <div className="flex-1">
                   {/* Role */}
                   <h3
-                    className={`text-lg font-semibold ${
+                    className={`text-[20px] font-semibold ${
                       isDark ? "text-white" : "text-gray-900"
                     }`}
                   >
@@ -222,9 +222,14 @@ export default function Portfolio({ isDark }) {
                   </h3>
 
                   {/* Company */}
-                  <a href="#" className="inline-block">
+                  <a
+                    href={exp.website}
+                    className="inline-block"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <p
-                      className={`text-sm font-medium transition ${
+                      className={`text-[16px] font-medium transition ${
                         isDark
                           ? "text-gray-300 hover:text-white"
                           : "text-gray-700 hover:text-gray-900"
@@ -245,7 +250,7 @@ export default function Portfolio({ isDark }) {
 
                   {/* Description (LinkedIn-style bullets) */}
                   <ul
-                    className={`list-disc pl-5 mt-3 space-y-2 text-sm leading-relaxed ${
+                    className={`list-disc pl-5 mt-3 space-y-2 text-[16px] leading-relaxed ${
                       isDark ? "text-gray-300" : "text-gray-700"
                     }`}
                   >
