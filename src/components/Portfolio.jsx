@@ -4,6 +4,7 @@ import { portfolioData } from "../data/portfolioData";
 
 export default function Portfolio({ isDark }) {
   const [activeSection, setActiveSection] = useState("overview");
+  const [displayedProjects, setDisplayedProjects] = useState(4);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function Portfolio({ isDark }) {
       "education",
       "skills",
       "certifications",
+      "competitive-programming",
     ];
     sections.forEach((section) => {
       const element = document.getElementById(`section-${section}`);
@@ -50,6 +52,10 @@ export default function Portfolio({ isDark }) {
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  const handleLoadMore = () => {
+    setDisplayedProjects(displayedProjects + 2);
   };
 
   return (
@@ -87,6 +93,7 @@ export default function Portfolio({ isDark }) {
             "education",
             "skills",
             "certifications",
+            "competitive-programming",
           ].map((section) => (
             <button
               key={section}
@@ -277,134 +284,166 @@ export default function Portfolio({ isDark }) {
           </h2>
 
           <div className="animate-fadeIn grid grid-cols-1 md:grid-cols-2 gap-6">
-            {portfolioData.projects.map((project, index) => (
-              <div
-                key={index}
-                className={`p-6 rounded-lg transition-all flex flex-col h-full ${
-                  isDark
-                    ? "bg-gray-800/40 hover:bg-gray-800/60"
-                    : "bg-white hover:bg-gray-50"
-                }`}
-                style={{
-                  border: `1px solid ${
+            {portfolioData.projects
+              .slice(0, displayedProjects)
+              .map((project, index) => (
+                <div
+                  key={index}
+                  className={`p-6 rounded-lg transition-all flex flex-col h-full ${
                     isDark
-                      ? "rgba(68, 255, 146, 0.1)"
-                      : "rgba(209, 213, 219, 0.5)"
-                  }`,
-                }}
-              >
-                {/* Content */}
-                <div>
-                  <h3
-                    className={`text-xl font-bold mb-2 ${
-                      isDark ? "text-white" : "text-gray-900"
-                    }`}
-                  >
-                    {project.title}
-                  </h3>
+                      ? "bg-gray-800/40 hover:bg-gray-800/60"
+                      : "bg-white hover:bg-gray-50"
+                  }`}
+                  style={{
+                    border: `1px solid ${
+                      isDark
+                        ? "rgba(68, 255, 146, 0.1)"
+                        : "rgba(209, 213, 219, 0.5)"
+                    }`,
+                  }}
+                >
+                  {/* Content */}
+                  <div>
+                    <h3
+                      className={`text-xl font-bold mb-1 ${
+                        isDark ? "text-white" : "text-gray-900"
+                      }`}
+                    >
+                      {project.title}
+                    </h3>
 
-                  <p
-                    className={`text-sm mb-4 ${
-                      isDark ? "text-gray-400" : "text-gray-600"
-                    }`}
-                  >
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className={`text-xs px-2 py-1 rounded ${
-                          isDark ? "bg-gray-700" : "bg-gray-100"
-                        }`}
-                        style={{
-                          color: isDark
-                            ? "var(--accent-color)"
-                            : "var(--primary-color)",
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between mt-auto">
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      navigate(`/portfolio/${project.id}`);
-                    }}
-                    className={`inline-flex items-center gap-2 font-semibold transition-colors`}
-                    style={{
-                      color: isDark
-                        ? "var(--accent-color)"
-                        : "var(--primary-color)",
-                    }}
-                  >
-                    View Project
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </a>
-
-                  <div className="flex items-center gap-3">
-                    {project.githubUrl && (
+                    <p
+                      className={`text-[12px] mb-2 ${
+                        isDark ? "text-gray-400" : "text-gray-600"
+                      }`}
+                    >
+                      (Associated with{" "}
                       <a
-                        href={project.githubUrl}
+                        href={`https://${project.associationURL}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`text-xl transition-colors ${
-                          isDark ? "text-gray-400" : "text-gray-600"
-                        }`}
-                        onMouseEnter={(e) =>
-                          (e.target.style.color = isDark
-                            ? "var(--accent-color)"
-                            : "var(--primary-color)")
-                        }
-                        onMouseLeave={(e) =>
-                          (e.target.style.color = isDark
-                            ? "rgb(107, 114, 128)"
-                            : "rgb(75, 85, 99)")
-                        }
-                        title="View on GitHub"
+                        className="underline"
                       >
-                        <i className="fa-brands fa-github"></i>
+                        {project.association}
                       </a>
-                    )}
+                      )
+                    </p>
 
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`text-xl transition-colors ${
-                          isDark ? "text-gray-400" : "text-gray-600"
-                        }`}
-                        onMouseEnter={(e) =>
-                          (e.target.style.color = isDark
-                            ? "var(--accent-color)"
-                            : "var(--primary-color)")
-                        }
-                        onMouseLeave={(e) =>
-                          (e.target.style.color = isDark
-                            ? "rgb(107, 114, 128)"
-                            : "rgb(75, 85, 99)")
-                        }
-                        title="View Live Demo"
-                      >
-                        <i className="fa-solid fa-external-link-alt"></i>
-                      </a>
-                    )}
+                    <p
+                      className={`text-sm mb-4 ${
+                        isDark ? "text-gray-400" : "text-gray-600"
+                      }`}
+                    >
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className={`text-xs px-2 py-1 rounded ${
+                            isDark ? "bg-gray-700" : "bg-gray-100"
+                          }`}
+                          style={{
+                            color: isDark
+                              ? "var(--accent-color)"
+                              : "var(--primary-color)",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Footer */}
+                  <div className="flex items-center justify-between mt-auto">
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate(`/portfolio/${project.id}`);
+                      }}
+                      className={`inline-flex items-center gap-2 font-semibold transition-colors`}
+                      style={{
+                        color: isDark
+                          ? "var(--accent-color)"
+                          : "var(--primary-color)",
+                      }}
+                    >
+                      View Project
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <div className="flex items-center gap-3">
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`text-xl transition-colors ${
+                            isDark ? "text-gray-400" : "text-gray-600"
+                          }`}
+                          onMouseEnter={(e) =>
+                            (e.target.style.color = isDark
+                              ? "var(--accent-color)"
+                              : "var(--primary-color)")
+                          }
+                          onMouseLeave={(e) =>
+                            (e.target.style.color = isDark
+                              ? "rgb(107, 114, 128)"
+                              : "rgb(75, 85, 99)")
+                          }
+                          title="View on GitHub"
+                        >
+                          <i className="fa-brands fa-github"></i>
+                        </a>
+                      )}
+
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`text-xl transition-colors ${
+                            isDark ? "text-gray-400" : "text-gray-600"
+                          }`}
+                          onMouseEnter={(e) =>
+                            (e.target.style.color = isDark
+                              ? "var(--accent-color)"
+                              : "var(--primary-color)")
+                          }
+                          onMouseLeave={(e) =>
+                            (e.target.style.color = isDark
+                              ? "rgb(107, 114, 128)"
+                              : "rgb(75, 85, 99)")
+                          }
+                          title="View Live Demo"
+                        >
+                          <i className="fa-solid fa-external-link-alt"></i>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
-        </div>
 
-        {/* Education Section */}
+          {/* More Projects Button */}
+          {displayedProjects < portfolioData.projects.length && (
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={handleLoadMore}
+                className={`px-8 py-3 font-bold rounded-full transition-colors duration-300 flex items-center gap-2 ${
+                  isDark ? "btn-solid-dark" : "btn-solid-light"
+                }`}
+              >
+                Load More Projects
+                <i className="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          )}
+        </div>
         <div id="section-education" className="mb-16 scroll-mt-28">
           <h2
             className={`text-3xl font-bold mb-8 ${
@@ -507,26 +546,35 @@ export default function Portfolio({ isDark }) {
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {skillGroup.skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                        isDark
-                          ? "bg-gray-800/40 hover:bg-gray-800/60"
-                          : "bg-white hover:bg-gray-50"
-                      }`}
-                      style={{
-                        border: `1px solid ${
-                          isDark
-                            ? "rgba(68, 255, 146, 0.1)"
-                            : "rgba(209, 213, 219, 0.5)"
-                        }`,
-                        color: isDark
-                          ? "var(--accent-color)"
-                          : "var(--primary-color)",
-                      }}
-                    >
-                      {skill}
-                    </span>
+                    <div key={i}>
+                      {skill.image ? (
+                        <img
+                          src={skill.image}
+                          alt={skill.name}
+                          className="h-8"
+                        />
+                      ) : (
+                        <span
+                          className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+                            isDark
+                              ? "bg-gray-800/40 hover:bg-gray-800/60"
+                              : "bg-white hover:bg-gray-50"
+                          }`}
+                          style={{
+                            border: `1px solid ${
+                              isDark
+                                ? "rgba(68, 255, 146, 0.1)"
+                                : "rgba(209, 213, 219, 0.5)"
+                            }`,
+                            color: isDark
+                              ? "var(--accent-color)"
+                              : "var(--primary-color)",
+                          }}
+                        >
+                          {skill.name}
+                        </span>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
@@ -534,8 +582,87 @@ export default function Portfolio({ isDark }) {
           </div>
         </div>
 
+        {/* Competitive Programming Section */}
+        <div
+          id="section-competitive-programming"
+          className="mb-16 scroll-mt-28"
+        >
+          <h2
+            className={`text-3xl font-bold mb-8 ${
+              isDark ? "text-white" : "text-gray-900"
+            }`}
+          >
+            Competitive Programming
+          </h2>
+          <div className="animate-fadeIn space-y-6">
+            {portfolioData.competitiveProgramming.map((program) => (
+              <div
+                key={program.id}
+                className={`p-6 rounded-lg flex items-start gap-4 ${
+                  isDark
+                    ? "bg-gray-800/40 hover:bg-gray-800/60"
+                    : "bg-white hover:bg-gray-50"
+                }`}
+                style={{
+                  border: `1px solid ${
+                    isDark
+                      ? "rgba(68, 255, 146, 0.1)"
+                      : "rgba(209, 213, 219, 0.5)"
+                  }`,
+                }}
+              >
+                <div
+                  className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center`}
+                  style={{
+                    backgroundColor: isDark
+                      ? "var(--accent-color)"
+                      : "var(--primary-color)",
+                    color: isDark ? "var(--primary-dark)" : "white",
+                  }}
+                >
+                  <i className={program.icon}></i>
+                </div>
+                <div className="flex-1">
+                  <h3
+                    className={`font-bold mb-2 text-lg ${
+                      isDark ? "text-white" : "text-gray-900"
+                    }`}
+                  >
+                    {program.platform}
+                  </h3>
+                  <p
+                    className={`text-sm mb-3 ${
+                      isDark ? "text-gray-300" : "text-gray-700"
+                    }`}
+                  >
+                    {program.description}
+                  </p>
+                  <a
+                    href={program.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-2 font-semibold transition-colors px-4 py-2 rounded-lg ${
+                      isDark
+                        ? "bg-gray-700/50 hover:bg-gray-700"
+                        : "bg-gray-100 hover:bg-gray-200"
+                    }`}
+                    style={{
+                      color: isDark
+                        ? "var(--accent-color)"
+                        : "var(--primary-color)",
+                    }}
+                  >
+                    View Profile (Handle: {program.handle})
+                    <i className="fa-solid fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Certifications Section */}
-        <div id="section-certifications" className="scroll-mt-28">
+        <div id="section-certifications" className="mb-16 scroll-mt-28">
           <h2
             className={`text-3xl font-bold mb-8 ${
               isDark ? "text-white" : "text-gray-900"
@@ -569,7 +696,15 @@ export default function Portfolio({ isDark }) {
                     color: isDark ? "var(--primary-dark)" : "white",
                   }}
                 >
-                  <i className="fa-solid fa-certificate"></i>
+                  {cert.image ? (
+                    <img
+                      src={cert.image}
+                      alt={cert.issuer}
+                      className="h-6 w-auto"
+                    />
+                  ) : (
+                    <i className="fa-solid fa-certificate"></i>
+                  )}
                 </div>
                 <div className="flex-1">
                   <h3
@@ -579,23 +714,47 @@ export default function Portfolio({ isDark }) {
                   >
                     {cert.title}
                   </h3>
-                  <p
-                    className={`text-sm font-semibold`}
-                    style={{
-                      color: isDark
-                        ? "var(--accent-color)"
-                        : "var(--primary-color)",
-                    }}
-                  >
-                    {cert.issuer}
-                  </p>
-                  <p
-                    className={`text-xs ${
-                      isDark ? "text-gray-400" : "text-gray-600"
-                    }`}
-                  >
-                    {cert.date}
-                  </p>
+                  <div className="flex justify-between items-end">
+                    <div>
+                      <p
+                        className={`text-sm font-semibold`}
+                        style={{
+                          color: isDark
+                            ? "var(--accent-color)"
+                            : "var(--primary-color)",
+                        }}
+                      >
+                        {cert.issuer}
+                      </p>
+                      <p
+                        className={`text-xs ${
+                          isDark ? "text-gray-400" : "text-gray-600"
+                        }`}
+                      >
+                        {cert.date}
+                      </p>
+                    </div>
+                    {cert.certificateURL && (
+                      <a
+                        href={cert.certificateURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 font-semibold transition-colors px-3 py-1.5 rounded mt-3 text-sm ${
+                          isDark
+                            ? "bg-gray-700/50 hover:bg-gray-700"
+                            : "bg-gray-100 hover:bg-gray-200"
+                        }`}
+                        style={{
+                          color: isDark
+                            ? "var(--accent-color)"
+                            : "var(--primary-color)",
+                        }}
+                      >
+                        View Certificate
+                        <i className="fa-solid fa-external-link-alt"></i>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
