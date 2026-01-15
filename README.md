@@ -1,7 +1,6 @@
 # 👋 Hi, I'm Mijanur Rahman
 
 🚀 Software Engineer | Frontend Developer
-🌍 Based in Bangladesh  
 
 I am a passionate frontend developer with experience in building modern, responsive, and user-friendly web applications. I enjoy turning ideas into real products and continuously learning new technologies.
 
