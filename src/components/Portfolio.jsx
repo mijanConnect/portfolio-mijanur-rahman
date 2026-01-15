@@ -1,11 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { portfolioData } from "../data/portfolioData";
+import { GitHubCalendar } from "react-github-calendar";
 
 export default function Portfolio({ isDark }) {
   const [activeSection, setActiveSection] = useState("overview");
   const [displayedProjects, setDisplayedProjects] = useState(4);
   const navigate = useNavigate();
+  const navRef = useRef(null);
+  const calendarRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
     const observerOptions = {
@@ -33,6 +39,7 @@ export default function Portfolio({ isDark }) {
       "overview",
       "experience",
       "projects",
+      "github-contributions",
       "education",
       "skills",
       "certifications",
@@ -58,6 +65,24 @@ export default function Portfolio({ isDark }) {
     setDisplayedProjects(displayedProjects + 2);
   };
 
+  const handleMouseDown = (e, ref) => {
+    setIsDragging(true);
+    setDragStartX(e.pageX - ref.current.offsetLeft);
+    setScrollLeft(ref.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e, ref) => {
+    if (!isDragging || !ref.current) return;
+    e.preventDefault();
+    const x = e.pageX - ref.current.offsetLeft;
+    const walk = (x - dragStartX) * 1;
+    ref.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   return (
     <>
       <div className="w-full">
@@ -77,19 +102,26 @@ export default function Portfolio({ isDark }) {
           </p>
         </div>
 
-        {/* Navigation Tabs */}
         {/* Sticky Navigation Tabs */}
         <div
-          className={`sticky top-0 z-50 flex flex-wrap gap-3 pb-4 pt-4 border-b ${
+          ref={navRef}
+          onMouseDown={(e) => handleMouseDown(e, navRef)}
+          onMouseMove={(e) => handleMouseMove(e, navRef)}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          className={`sticky top-0 z-50 flex flex-nowrap gap-3 pb-4 pt-4 border-b overflow-x-auto ${
+            isDark ? "sticky-nav-dark" : "sticky-nav-light"
+          } ${
             isDark
               ? "border-gray-700 bg-(--background-dark)"
               : "border-gray-300 bg-white"
-          }`}
+          } select-none cursor-grab active:cursor-grabbing`}
         >
           {[
             "overview",
             "experience",
             "projects",
+            "github-contributions",
             "education",
             "skills",
             "certifications",
@@ -98,7 +130,7 @@ export default function Portfolio({ isDark }) {
             <button
               key={section}
               onClick={() => handleTabClick(section)}
-              className={`px-4 py-1.5 rounded-full font-semibold transition-all capitalize ${
+              className={`px-4 py-1.5 rounded-full font-semibold transition-all capitalize text-nowrap ${
                 activeSection === section
                   ? isDark
                     ? "bg-accent-dark text-gray-900"
@@ -444,6 +476,34 @@ export default function Portfolio({ isDark }) {
             </div>
           )}
         </div>
+
+        {/* GitHub Contributions Section */}
+        <div id="section-github-contributions" className="mb-16 scroll-mt-28">
+          <h2
+            className={`text-3xl font-bold mb-8 ${
+              isDark ? "text-white" : "text-gray-900"
+            }`}
+          >
+            Github Contributions
+          </h2>
+
+          <div
+            ref={calendarRef}
+            onMouseDown={(e) => handleMouseDown(e, calendarRef)}
+            onMouseMove={(e) => handleMouseMove(e, calendarRef)}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            className={`overflow-x-auto rounded-lg w-full ${
+              isDark ? "github-calendar-dark" : "github-calendar-light"
+            } select-none cursor-grab active:cursor-grabbing`}
+          >
+            <div className="inline-block w-full">
+              <GitHubCalendar username="mijanConnect" />
+            </div>
+          </div>
+        </div>
+
+        {/* Education Section */}
         <div id="section-education" className="mb-16 scroll-mt-28">
           <h2
             className={`text-3xl font-bold mb-8 ${
@@ -688,7 +748,7 @@ export default function Portfolio({ isDark }) {
                 }}
               >
                 <div
-                  className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center`}
+                  className={`shrink-0 w-12 h-12 rounded-xl flex items-center justify-center`}
                   style={{
                     backgroundColor: isDark
                       ? "var(--accent-color)"
@@ -700,7 +760,7 @@ export default function Portfolio({ isDark }) {
                     <img
                       src={cert.image}
                       alt={cert.issuer}
-                      className="h-6 w-auto"
+                      className="h-12 w-12 rounded-lg"
                     />
                   ) : (
                     <i className="fa-solid fa-certificate"></i>
@@ -775,6 +835,44 @@ export default function Portfolio({ isDark }) {
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-in-out;
+        }
+
+        /* Custom Scrollbar - Hidden */
+        .github-calendar-light::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .github-calendar-light {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        .github-calendar-dark::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .github-calendar-dark {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        /* Sticky Navigation - Hidden Scrollbar */
+        .sticky-nav-light::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .sticky-nav-light {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        .sticky-nav-dark::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .sticky-nav-dark {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </>

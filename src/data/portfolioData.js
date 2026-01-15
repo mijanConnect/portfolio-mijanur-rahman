@@ -58,8 +58,7 @@ export const portfolioData = {
         "Ant Design",
       ],
       link: "#",
-      image:
-        "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+      image: "/assets/projects/the-pigeon-hub.png",
       details: {
         overview:
           "A comprehensive e-commerce platform designed to provide seamless shopping experiences with modern UI/UX patterns and robust backend infrastructure.",
@@ -112,8 +111,7 @@ export const portfolioData = {
         "Tailwind CSS",
       ],
       link: "#",
-      image:
-        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
+      image: "/assets/projects/motly.png",
       details: {
         overview:
           "A collaborative task management tool that helps teams organize, prioritize, and track their work efficiently with real-time synchronization.",
@@ -164,8 +162,7 @@ export const portfolioData = {
         "RTK Query",
       ],
       link: "#",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      image: "/assets/projects/loyalty.png",
       details: {
         overview:
           "A personal portfolio website showcasing projects, skills, and professional experience with modern design principles and smooth user interactions.",
@@ -216,8 +213,7 @@ export const portfolioData = {
         "JavaScript DOM",
       ],
       link: "#",
-      image:
-        "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop",
+      image: "/assets/projects/nawab-host.png",
       details: {
         overview:
           "A modern blogging platform that empowers writers to create and publish content with ease, featuring markdown support and powerful SEO capabilities.",
@@ -262,8 +258,7 @@ export const portfolioData = {
         "Author Digital World is an ebook platform where users can browse a store, read books online, and download PDFs.",
       tags: ["React", "Tailwind CSS", "React Router"],
       link: "#",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      image: "/assets/projects/author.png",
       details: {
         overview:
           "A personal portfolio website showcasing projects, skills, and professional experience with modern design principles and smooth user interactions.",
@@ -453,8 +448,7 @@ export const portfolioData = {
     {
       title: "Master HTML and CSS by building real world projects",
       issuer: "Udemy",
-      image:
-        "https://img.shields.io/badge/Udemy-EC5252?style=for-the-badge&logo=udemy&logoColor=white",
+      image: "/assets/certificate/udemy.png",
       certificateURL:
         "https://www.udemy.com/certificate/UC-22f0b588-d9cc-45af-bc1a-9cd5cad11cf7/",
       date: "June 20, 2025",
@@ -462,8 +456,7 @@ export const portfolioData = {
     {
       title: "Master Git and Github - Beginner to Expert",
       issuer: "Udemy",
-      image:
-        "https://img.shields.io/badge/Udemy-EC5252?style=for-the-badge&logo=udemy&logoColor=white",
+      image: "/assets/certificate/udemy.png",
       certificateURL:
         "https://www.udemy.com/certificate/UC-1ca68fd6-c136-43af-8d60-4616007b1001/",
       date: "March 06, 2023",

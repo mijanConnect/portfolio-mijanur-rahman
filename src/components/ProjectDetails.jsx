@@ -1,11 +1,24 @@
+import { useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { portfolioData } from "../data/portfolioData";
 
 export default function ProjectDetails({ isDark }) {
   const { id } = useParams();
   const navigate = useNavigate();
+  const articleRef = useRef(null);
 
   const project = portfolioData.projects.find((p) => p.id === parseInt(id));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    if (articleRef.current) {
+      articleRef.current.scrollIntoView({
+        behavior: "instant",
+        block: "start",
+      });
+    }
+  }, [id]);
 
   if (!project) {
     return (
@@ -28,7 +41,7 @@ export default function ProjectDetails({ isDark }) {
   }
 
   return (
-    <article className="w-full mx-auto">
+    <article ref={articleRef} className="w-full mx-auto">
       {/* Back Button */}
       <button
         onClick={() => navigate("/portfolio")}

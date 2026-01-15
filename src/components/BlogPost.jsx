@@ -1,11 +1,24 @@
+import { useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { blogPosts } from "../data/blogData";
 
 export default function BlogPost({ isDark }) {
   const { id } = useParams();
   const navigate = useNavigate();
+  const articleRef = useRef(null);
 
   const post = blogPosts.find((p) => p.id === parseInt(id));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    if (articleRef.current) {
+      articleRef.current.scrollIntoView({
+        behavior: "instant",
+        block: "start",
+      });
+    }
+  }, [id]);
 
   if (!post) {
     return (
@@ -28,7 +41,7 @@ export default function BlogPost({ isDark }) {
   }
 
   return (
-    <article className="w-full max-w-[1000px] mx-auto">
+    <article ref={articleRef} className="w-full max-w-[1100px] mx-auto">
       {/* Back Button */}
       <button
         onClick={() => navigate("/blog")}
