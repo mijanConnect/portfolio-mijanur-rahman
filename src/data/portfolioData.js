@@ -1,7 +1,7 @@
 export const portfolioData = {
   overview: {
     title: "Overview",
-    content: `Frontend Developer specializing in React.js with a strong foundation in JavaScript, HTML, CSS, and REST APIs. Built multiple responsive projects using modern front-end tools like Next.js, Redux, Bootstrap, Tailwind CSS. Passionate about writing clean, efficient code and continuously learning new technologies.`,
+    content: `Software Engineer specializing in React.js with a strong foundation in JavaScript, HTML, CSS, and REST APIs. Built multiple responsive projects using modern front-end tools like Next.js, Redux, Bootstrap, Tailwind CSS. Passionate about writing clean, efficient code and continuously learning new technologies.`,
   },
   experience: [
     {

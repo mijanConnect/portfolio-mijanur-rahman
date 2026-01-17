@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
+import { portfolioData } from "../data/portfolioData";
+import resumePdf from "../assets/Resume.pdf";
 
 export default function About({ isDark }) {
+  const handleResumeDownload = () => {
+    // Create a link element and trigger download
+    const link = document.createElement("a");
+    link.href = resumePdf;
+    link.download = "Resume_of_Mijanur_Rahman.pdf";
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     // <div className="flex items-center justify-center flex-1">
     //   <h1
@@ -83,7 +96,7 @@ export default function About({ isDark }) {
         }}
       >
         <p
-          className={`text-xs md:text-sm mb-1 ${
+          className={`text-xs md:text-sm mb-0 lg:mb-1 ${
             isDark ? "text-accent-dark" : "text-accent-light"
           }`}
         >
@@ -101,20 +114,18 @@ export default function About({ isDark }) {
             isDark ? "text-gray-300" : "text-gray-600"
           }`}
         >
-          Software Engineer specializing in React.js with a strong foundation in
-          JavaScript, HTML, CSS, and REST APIs. Built multiple responsive
-          projects using modern front-end tools like Next.js, Redux, Bootstrap,
-          Tailwind CSS. Passionate about writing clean, efficient code and
-          continuously learning new technologies.
+          {portfolioData.overview.content}
         </p>
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
           <button
+            onClick={handleResumeDownload}
             className={`px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-semibold transition ${
               isDark ? "btn-primary-dark" : "btn-primary-light"
             }`}
           >
-            Download
+            Resume
+            <i className="fa-solid fa-download text-sm"></i>
           </button>
           <button
             className={`px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-semibold transition ${
