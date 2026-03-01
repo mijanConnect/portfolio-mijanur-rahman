@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { portfolioData } from "../data/portfolioData";
-import resumePdf from "../assets/Resume.pdf";
+import resumePdf from "../assets/resume-of-mijanur-rahman.pdf";
 
 export default function About({ isDark }) {
   const handleResumeDownload = () => {
@@ -61,7 +61,7 @@ export default function About({ isDark }) {
     //   </div>
     // </section>
     <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 flex-1">
-      <div className="order-2 md:order-1 w-full md:w-[420px] md:self-center">
+      <div className="order-1 md:order-2 w-full md:w-[420px] md:self-center">
         {/* Profile Image */}
         <div
           className={`w-full overflow-hidden shadow-md rounded-lg ${
@@ -84,7 +84,7 @@ export default function About({ isDark }) {
       </div>
       {/* Description */}
       <div
-        className={`order-1 md:order-2 rounded-lg p-6 md:p-8 shadow-md w-full md:w-[420px] ${
+        className={`order-2 md:order-1 rounded-lg p-6 md:py-10 md:px-8 shadow-md w-full md:w-[420px] ${
           isDark
             ? "bg-gray-800/40 hover:bg-gray-800/60"
             : "bg-white hover:bg-gray-50"

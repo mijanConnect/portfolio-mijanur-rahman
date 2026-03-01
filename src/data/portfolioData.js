@@ -18,6 +18,17 @@ export const portfolioData = {
       website: "https://betopiagroup.com",
     },
     {
+      role: "Program Developer (Remote)",
+      company: "Softex Solution",
+      period: "July 2026 - September 2024",
+      description: [
+        "Worked closely with the development team to convert Figma designs into accurate, pixel-perfect, and reusable React components.",
+        "Developed modern and responsive UI components using Tailwind CSS and Ant Design to ensure a seamless user experience.",
+        "Followed best practices to write clean, scalable, and maintainable code aligned with modern development standards.",
+      ],
+      website: "https://softexsolution.com/",
+    },
+    {
       role: "Junior Software Engineer",
       company: "Nawab Host",
       period: "July 2022 - April 2023",
@@ -42,7 +53,63 @@ export const portfolioData = {
   ],
   projects: [
     {
-      id: 1,
+      id: 2,
+      title: "Trade Link Network",
+      associationURL: "tradelinknetwork.co.uk",
+      association: "Betopia Group",
+      description:
+        "A UK-wide platform that connects homeowners and businesses with verified local tradespeople quickly and reliably.",
+      tags: [
+        "Next.js",
+        "React Router",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Stripe API",
+        "Trustpilot API",
+      ],
+      link: "https://www.tradelinknetwork.co.uk",
+      image: "/assets/projects/trade-link-network.png",
+      details: {
+        overview:
+          "Trade Link Network is a service marketplace that enables users across England, Scotland, Wales and Northern Ireland to post jobs and get matched with up to three verified local tradespeople who can complete the work. The platform simplifies hiring trusted professionals by eliminating cold calling and enabling quick comparison of quotes." /* from site overview */,
+        challenge:
+          "Homeowners and businesses often struggle to find reliable, vetted tradespeople without sifting through unverified ads or endless phone calls. The challenge was to streamline job posting and connect customers with professionals efficiently and securely.",
+        solution:
+          "By creating a guided job posting process and a vetting system for tradespeople, the platform ensures that customers receive real responses from ID-checked professionals and can compare up to 3 quotes before deciding. The service works seamlessly across the UK with straightforward job matching and communication tools.",
+      },
+      features: [
+        "Post job requests for any trade type free of charge",
+        "Receive responses from up to three verified local professionals",
+        "Compare quotes, reviews, experience and availability",
+        "Services available across the entire UK (England, Scotland, Wales, Northern Ireland)",
+        "Tradespeople are vetted and ID checked before joining",
+        "Residential and commercial jobs supported",
+        "No obligation to hire until you choose",
+        "Direct communication between customer and professional after matching",
+      ],
+      technologies: [
+        "Next.js",
+        "React Router",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Stripe API",
+        "Trustpilot API",
+      ],
+      results: [
+        "Faster and easier connection to local tradespeople nationwide",
+        "Reduced time to hire professionals compared to traditional methods",
+        "Higher transparency through vetting and multiple quote comparison",
+        "Improved trust and reliability for both homeowners and trades",
+        "Streamlined communication between customers and tradespeople",
+      ],
+      liveUrl: "https://www.tradelinknetwork.co.uk",
+      githubUrl:
+        "https://github.com/mijanConnect/trade-link-network-website-api-inregration.git",
+    },
+    {
+      id: 2,
       title: "The Pigeon Hub",
       associationURL: "betopiagroup.com",
       association: "Betopia Group",
@@ -100,7 +167,7 @@ export const portfolioData = {
       githubUrl: "https://github.com/mijanConnect/the-piegeon-hub-website.git",
     },
     {
-      id: 2,
+      id: 3,
       title: "Motly - Vehicle Rental Service",
       associationURL: "betopiagroup.com",
       association: "Betopia Group",
@@ -152,62 +219,6 @@ export const portfolioData = {
       liveUrl: "https://motly-car-rental-website-mahsundic.vercel.app",
       githubUrl:
         "https://github.com/mijanConnect/motly-car-rental-website-mahsundic.git",
-    },
-    {
-      id: 3,
-      title: "MLITech - Loyalty & Rewards Program",
-      associationURL: "betopiagroup.com",
-      association: "Betopia Group",
-      description:
-        "MLITech is a loyalty and rewards system for ecommerce, supporting admin control, merchant management, user rewards, promotions, and tier based benefits.",
-      tags: [
-        "React.js",
-        "Ant Design",
-        "Tailwind CSS",
-        "React Router",
-        "RTK Query",
-      ],
-      link: "#",
-      image: "/assets/projects/loyalty.png",
-      details: {
-        overview:
-          "MLITech’s Loyalty & Rewards Program is designed to enhance customer engagement and retention by rewarding users for their interactions and purchases. The platform enables businesses to create, manage, and track loyalty campaigns efficiently while providing customers with points, discounts, and exclusive rewards.",
-        challenge:
-          "The main challenge was designing a flexible and scalable loyalty system that could handle diverse reward types, track user engagement accurately, and provide actionable insights to businesses, all while ensuring a seamless and engaging experience for customers.",
-        solution:
-          "We developed a flexible and scalable loyalty platform that supports multiple reward types, tracks user interactions in real-time, and provides businesses with actionable insights. The system is designed with an intuitive interface, ensuring a seamless experience for customers while allowing businesses to easily create, manage, and monitor loyalty campaigns.",
-      },
-      features: [
-        "Manage users by adding, editing, deleting, or activating/deactivating accounts.",
-        "Assign roles and set permissions for different admin levels.",
-        "View real-time metrics and key system statistics on the dashboard.",
-        "Visualize data with charts and graphs for trends and analytics.",
-        "Search and filter users or records quickly and efficiently.",
-        "Track actions and activity with audit logs for security and compliance.",
-        "Receive notifications and alerts for important system events.",
-        "Access a responsive interface that works on desktop and mobile.",
-        "Configure system settings and application preferences in one place.",
-        "Export or import data for reporting, backups, or analysis.",
-      ],
-      technologies: [
-        "React.js",
-        "Ant Design",
-        "Tailwind CSS",
-        "React Router",
-        "RTK Query",
-        "Socket.io",
-        "Stripe API",
-      ],
-      results: [
-        "Improved Efficiency – Admins can manage users, roles, and settings quickly in one centralized platform.",
-        "Better Decision-Making – Real-time metrics and data visualization provide actionable insights.",
-        "Enhanced User Engagement – Flexible reward types and notifications keep users motivated and active.",
-        "Enhanced Security & Compliance – Audit logs and role-based permissions ensure system security.",
-        "Higher User Satisfaction – Notifications, alerts, and responsive design improve overall user experience.",
-        "Scalable & Future-Ready – Modular architecture allows easy addition of new features and services.",
-      ],
-      liveUrl: "https://mlitech-admin-dashboard.vercel.app",
-      githubUrl: "https://github.com/mijanConnect/mlitech-admin-dashboard.git",
     },
     {
       id: 4,
@@ -263,6 +274,62 @@ export const portfolioData = {
     },
     {
       id: 5,
+      title: "MLITech - Loyalty & Rewards Program",
+      associationURL: "betopiagroup.com",
+      association: "Betopia Group",
+      description:
+        "MLITech is a loyalty and rewards system for ecommerce, supporting admin control, merchant management, user rewards, promotions, and tier based benefits.",
+      tags: [
+        "React.js",
+        "Ant Design",
+        "Tailwind CSS",
+        "React Router",
+        "RTK Query",
+      ],
+      link: "#",
+      image: "/assets/projects/loyalty.png",
+      details: {
+        overview:
+          "MLITech’s Loyalty & Rewards Program is designed to enhance customer engagement and retention by rewarding users for their interactions and purchases. The platform enables businesses to create, manage, and track loyalty campaigns efficiently while providing customers with points, discounts, and exclusive rewards.",
+        challenge:
+          "The main challenge was designing a flexible and scalable loyalty system that could handle diverse reward types, track user engagement accurately, and provide actionable insights to businesses, all while ensuring a seamless and engaging experience for customers.",
+        solution:
+          "We developed a flexible and scalable loyalty platform that supports multiple reward types, tracks user interactions in real-time, and provides businesses with actionable insights. The system is designed with an intuitive interface, ensuring a seamless experience for customers while allowing businesses to easily create, manage, and monitor loyalty campaigns.",
+      },
+      features: [
+        "Manage users by adding, editing, deleting, or activating/deactivating accounts.",
+        "Assign roles and set permissions for different admin levels.",
+        "View real-time metrics and key system statistics on the dashboard.",
+        "Visualize data with charts and graphs for trends and analytics.",
+        "Search and filter users or records quickly and efficiently.",
+        "Track actions and activity with audit logs for security and compliance.",
+        "Receive notifications and alerts for important system events.",
+        "Access a responsive interface that works on desktop and mobile.",
+        "Configure system settings and application preferences in one place.",
+        "Export or import data for reporting, backups, or analysis.",
+      ],
+      technologies: [
+        "React.js",
+        "Ant Design",
+        "Tailwind CSS",
+        "React Router",
+        "RTK Query",
+        "Socket.io",
+        "Stripe API",
+      ],
+      results: [
+        "Improved Efficiency – Admins can manage users, roles, and settings quickly in one centralized platform.",
+        "Better Decision-Making – Real-time metrics and data visualization provide actionable insights.",
+        "Enhanced User Engagement – Flexible reward types and notifications keep users motivated and active.",
+        "Enhanced Security & Compliance – Audit logs and role-based permissions ensure system security.",
+        "Higher User Satisfaction – Notifications, alerts, and responsive design improve overall user experience.",
+        "Scalable & Future-Ready – Modular architecture allows easy addition of new features and services.",
+      ],
+      liveUrl: "https://mlitech-admin-dashboard.vercel.app",
+      githubUrl: "https://github.com/mijanConnect/mlitech-admin-dashboard.git",
+    },
+    {
+      id: 6,
       title: "Author - eBooks Platform",
       associationURL: "https://softexsolution.com/",
       association: "Softex Solution",
@@ -325,7 +392,13 @@ export const portfolioData = {
       degree: "BSc in CSE",
       institution: "Daffodil International University",
       year: "2021",
-      gpa: "3.39/4.0",
+      gpa: "3.39/4.00",
+    },
+    {
+      degree: "Higher Secondary Certificate (HSC)",
+      institution: "Nawabganj Govt. College",
+      year: "2016",
+      gpa: "5.00/5.00",
     },
   ],
   // New skills added

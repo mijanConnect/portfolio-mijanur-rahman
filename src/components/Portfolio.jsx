@@ -516,70 +516,72 @@ export default function Portfolio({ isDark }) {
             Education
           </h2>
           <div className="animate-fadeIn space-y-6">
-            <div
-              className={`rounded-lg`}
-              style={{
-                border: `1px solid ${
-                  isDark
-                    ? "rgba(68, 255, 146, 0.1)"
-                    : "rgba(209, 213, 219, 0.5)"
-                }`,
-              }}
-            >
+            <div className={`rounded-lg flex flex-col gap-6`}>
               {portfolioData.education.map((edu, index) => (
                 <div
-                  key={index}
-                  className={`p-4 lg:p-6 rounded-lg border-l-4 ${
-                    isDark
-                      ? "bg-gray-800/40 hover:bg-gray-800/60"
-                      : "bg-white hover:bg-gray-50"
-                  }`}
+                  className={`rounded-lg flex flex-col gap-6`}
                   style={{
-                    borderLeftColor: isDark
-                      ? "var(--accent-color)"
-                      : "var(--primary-color)",
+                    border: `1px solid ${
+                      isDark
+                        ? "rgba(68, 255, 146, 0.1)"
+                        : "rgba(209, 213, 219, 0.5)"
+                    }`,
                   }}
                 >
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <h3
-                        className={`text-xl font-bold mb-1 ${
-                          isDark ? "text-white" : "text-gray-900"
-                        }`}
-                      >
-                        {edu.degree}
-                      </h3>
-                      <p
-                        className={`text-sm font-semibold`}
-                        style={{
-                          color: isDark
-                            ? "var(--accent-color)"
-                            : "var(--primary-color)",
-                        }}
-                      >
-                        {edu.institution}
-                      </p>
-                    </div>
-                    <div className="text-right text-nowrap">
-                      <span
-                        className={`text-sm font-semibold block mb-2 ${
-                          isDark ? "text-gray-300" : "text-gray-700"
-                        }`}
-                      >
-                        {edu.year}
-                      </span>
-                      <span
-                        className={`text-xs px-2 py-1 rounded ${
-                          isDark ? "bg-gray-700" : "bg-gray-100"
-                        }`}
-                        style={{
-                          color: isDark
-                            ? "var(--accent-color)"
-                            : "var(--primary-color)",
-                        }}
-                      >
-                        GPA: {edu.gpa}
-                      </span>
+                  <div
+                    key={index}
+                    className={`p-4 lg:p-6 rounded-lg border-l-4 ${
+                      isDark
+                        ? "bg-gray-800/40 hover:bg-gray-800/60"
+                        : "bg-white hover:bg-gray-50"
+                    }`}
+                    style={{
+                      borderLeftColor: isDark
+                        ? "var(--accent-color)"
+                        : "var(--primary-color)",
+                    }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <div>
+                        <h3
+                          className={`text-xl font-bold mb-1 ${
+                            isDark ? "text-white" : "text-gray-900"
+                          }`}
+                        >
+                          {edu.degree}
+                        </h3>
+                        <p
+                          className={`text-sm font-semibold`}
+                          style={{
+                            color: isDark
+                              ? "var(--accent-color)"
+                              : "var(--primary-color)",
+                          }}
+                        >
+                          {edu.institution}
+                        </p>
+                      </div>
+                      <div className="text-right text-nowrap">
+                        <span
+                          className={`text-sm font-semibold block mb-2 ${
+                            isDark ? "text-gray-300" : "text-gray-700"
+                          }`}
+                        >
+                          {edu.year}
+                        </span>
+                        <span
+                          className={`text-xs px-2 py-1 rounded ${
+                            isDark ? "bg-gray-700" : "bg-gray-100"
+                          }`}
+                          style={{
+                            color: isDark
+                              ? "var(--accent-color)"
+                              : "var(--primary-color)",
+                          }}
+                        >
+                          GPA: {edu.gpa}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>

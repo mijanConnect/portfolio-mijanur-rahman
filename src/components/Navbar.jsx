@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import resumePdf from "../assets/Resume.pdf";
+import resumePdf from "../assets/resume-of-mijanur-rahman.pdf";
 
 export default function Navbar({ isDark, onToggleDark }) {
   const [isOpen, setIsOpen] = useState(false);
