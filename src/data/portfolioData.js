@@ -439,6 +439,45 @@ export const portfolioData = {
       githubUrl:
         "https://github.com/mijanConnect/eat-and-pace-doctor-dashboard.git",
     },
+    {
+      id: 8,
+      title: "Tweet E-commerce",
+      associationURL: "tweet-e-commerce.vercel.app",
+      association: "Job Task Project",
+      description:
+        "A modern e-commerce web application that allows users to browse products, view details, and simulate an online shopping experience with a clean and responsive UI.",
+      tags: ["Next.js", "TypeScript", "Redux Toolkit", "Tailwind CSS"],
+      link: "https://tweet-e-commerce.vercel.app/",
+      image: "/assets/projects/tweet-ecommerce.png",
+      details: {
+        overview:
+          "Tweet E-commerce is a frontend-focused online shopping platform built using modern web technologies. It provides users with a smooth browsing experience, product listings, and detailed views in a responsive and visually clean interface.",
+        challenge:
+          "Building an e-commerce interface requires handling dynamic product data, responsive layouts, and maintaining performance across devices. The challenge was to create a scalable frontend structure that simulates real-world e-commerce workflows.",
+        solution:
+          "The application uses a modular component-based architecture with efficient state management to handle product data and UI interactions. The responsive design ensures usability across mobile, tablet, and desktop devices, delivering a consistent shopping experience.",
+      },
+      features: [
+        "Product listing with clean UI",
+        "Product details page",
+        "Responsive design for all screen sizes",
+        "State management using Redux Toolkit",
+        "Reusable and modular components",
+        "API-based data handling",
+        "Fast performance with Next.js optimization",
+        "Modern UI with Tailwind CSS",
+      ],
+      technologies: ["Next.js", "TypeScript", "Redux Toolkit", "Tailwind CSS"],
+      results: [
+        "Demonstrates a complete e-commerce frontend workflow",
+        "Improved UI/UX with responsive and modern design",
+        "Efficient state handling for scalable applications",
+        "Strong foundation for integrating backend and payment systems",
+        "Showcases real-world project structure for portfolio",
+      ],
+      liveUrl: "https://tweet-e-commerce.vercel.app/",
+      githubUrl: "https://github.com/mijanConnect/Tweet-e-commerce.git",
+    },
   ],
   // New education section added
   education: [
