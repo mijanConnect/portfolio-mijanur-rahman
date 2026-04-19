@@ -53,7 +53,7 @@ export const portfolioData = {
   ],
   projects: [
     {
-      id: 2,
+      id: 1,
       title: "Trade Link Network",
       associationURL: "tradelinknetwork.co.uk",
       association: "Betopia Group",
@@ -385,6 +385,60 @@ export const portfolioData = {
       liveUrl: "https://author-frontend-pi.vercel.app",
       githubUrl: "https://github.com/mijanConnect/AuthorFrontend.git",
     },
+    {
+      id: 7,
+      title: "Eat & Pace",
+      associationURL: "eat-and-pace-doctor-dashboard.vercel.app",
+      association: "Betopia Group",
+      description:
+        "A responsive doctor dashboard that enables healthcare professionals to efficiently manage appointments, patients, and schedules through a clean and user-friendly interface.",
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Ant Design",
+        "REST API",
+      ],
+      link: "https://eat-and-pace-doctor-dashboard.vercel.app/",
+      image: "/assets/projects/eat-and-pace-dashboard.png",
+      details: {
+        overview:
+          "Eat & Pace Doctor Dashboard is a modern healthcare management interface designed to streamline doctors' daily workflows. It provides a centralized system for managing appointments, viewing patient data, and organizing schedules with a clean and responsive UI.",
+        challenge:
+          "Doctors often face inefficiencies when handling appointments and patient data across multiple systems. The challenge was to build a unified, responsive dashboard that ensures clarity, real-time updates, and smooth usability across devices.",
+        solution:
+          "The application introduces a structured dashboard with intuitive navigation, allowing doctors to manage appointments and patient information in one place. With efficient state management and responsive design, it ensures seamless performance across devices.",
+      },
+      features: [
+        "Dashboard overview with key insights and summaries",
+        "Appointment management system",
+        "Patient data handling and organization",
+        "Fully responsive UI (mobile, tablet, desktop)",
+        "Clean and intuitive user experience",
+        "API-based dynamic data integration",
+        "State management using Redux Toolkit",
+        "Scalable and modular architecture",
+      ],
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Ant Design",
+        "REST API",
+      ],
+      results: [
+        "Improved efficiency in managing patient appointments",
+        "Better user experience for healthcare professionals",
+        "Reduced manual errors and operational complexity",
+        "Consistent performance across different devices",
+        "Scalable foundation for future healthcare features",
+      ],
+      liveUrl: "https://eat-and-pace-doctor-dashboard.vercel.app/",
+      githubUrl:
+        "https://github.com/mijanConnect/eat-and-pace-doctor-dashboard.git",
+    },
   ],
   // New education section added
   education: [
@@ -398,6 +452,12 @@ export const portfolioData = {
       degree: "Higher Secondary Certificate (HSC)",
       institution: "Nawabganj Govt. College",
       year: "2016",
+      gpa: "4.25/5.00",
+    },
+    {
+      degree: "Secondary School Certificate (SSC)",
+      institution: "Rajarampur Hamidullah High School",
+      year: "2014",
       gpa: "5.00/5.00",
     },
   ],
